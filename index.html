@@ -187,9 +187,69 @@
     font-size: 12px;
     text-align: center;
   }
+
+  /* Password gate */
+  #password-gate {
+    position: fixed; inset: 0;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+  }
+  #password-gate .gate-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    width: 90%; max-width: 420px;
+    text-align: center;
+  }
+  #password-gate h2 { margin: 0 0 8px 0; font-size: 20px; color: var(--text); }
+  #password-gate .hint { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  #password-gate input {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  #password-gate input:focus { outline: none; border-color: var(--accent); }
+  #password-gate button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  #password-gate button:hover { opacity: 0.9; }
+  #password-gate .error { color: var(--red); font-size: 13px; margin-top: 12px; min-height: 18px; }
+  body.gate-locked .container { display: none; }
+
 </style>
 </head>
-<body>
+<body class="gate-locked">
+
+<div id="password-gate">
+  <div class="gate-box">
+    <h2>LTS Shipments Dashboard</h2>
+    <div class="hint">Internal use only. Enter the team password to continue.</div>
+    <form id="gate-form" autocomplete="off">
+      <input type="password" id="gate-input" placeholder="Password" autofocus />
+      <button type="submit">Unlock</button>
+      <div class="error" id="gate-error"></div>
+    </form>
+  </div>
+</div>
+
 <div class="container">
   <header>
     <div>
@@ -361,5 +421,47 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 
 render("all");
 </script>
+
+<script>
+(async function() {
+  const HASH = "570597212d7561b0cf5efac437ca4bd0831a08b5e0b38556521d9f5fe5aa3888";
+  const STORAGE_KEY = "ltsShipmentsUnlocked";
+
+  async function sha256(text) {
+    const buf = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  function unlock() {
+    document.body.classList.remove("gate-locked");
+    const gate = document.getElementById("password-gate");
+    if (gate) gate.remove();
+  }
+
+  // Check if already unlocked
+  if (localStorage.getItem(STORAGE_KEY) === HASH) {
+    unlock();
+    return;
+  }
+
+  const form = document.getElementById("gate-form");
+  const input = document.getElementById("gate-input");
+  const err = document.getElementById("gate-error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const h = await sha256(input.value);
+    if (h === HASH) {
+      localStorage.setItem(STORAGE_KEY, HASH);
+      unlock();
+    } else {
+      err.textContent = "Incorrect password. Try again.";
+      input.select();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
