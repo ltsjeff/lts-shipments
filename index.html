@@ -55,7 +55,6 @@
   .badge-due { background: rgba(245, 158, 11, 0.15); color: var(--amber); border: 1px solid var(--amber); }
   .badge-pending { background: rgba(168, 85, 247, 0.15); color: var(--purple); border: 1px solid var(--purple); }
 
-  /* Stats */
   .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -85,7 +84,6 @@
   .stat-card.info .value { color: var(--blue); }
   .stat-card.pending .value { color: var(--purple); }
 
-  /* Flags */
   .flags-section {
     background: var(--card);
     border: 1px solid var(--border);
@@ -103,7 +101,6 @@
   .flag-item:last-child { border-bottom: none; }
   .flag-item .ship-id { font-weight: 600; color: var(--text); }
 
-  /* Manufacturer mix */
   .mfg-summary {
     background: var(--card);
     border: 1px solid var(--border);
@@ -119,7 +116,6 @@
   .mfg-bar .fill { background: var(--accent); height: 100%; border-radius: 4px; }
   .mfg-bar .count { text-align: right; font-weight: 600; }
 
-  /* Filter buttons */
   .filters {
     display: flex;
     gap: 8px;
@@ -139,7 +135,6 @@
   .filter-btn:hover { background: var(--card-2); }
   .filter-btn.active { background: var(--accent); border-color: var(--accent); }
 
-  /* Table */
   .table-wrap {
     background: var(--card);
     border: 1px solid var(--border);
@@ -151,9 +146,7 @@
     border-collapse: collapse;
     font-size: 13px;
   }
-  thead {
-    background: var(--card-2);
-  }
+  thead { background: var(--card-2); }
   th {
     text-align: left;
     padding: 12px 14px;
@@ -167,7 +160,6 @@
     cursor: pointer;
     user-select: none;
   }
-  th:hover { color: var(--text); }
   td {
     padding: 12px 14px;
     border-bottom: 1px solid var(--border);
@@ -218,18 +210,18 @@
   </div>
 </div>
 
+
 <div class="container">
   <header>
     <div>
       <h1>Incoming Shipments — LTS Canada</h1>
-      <div class="subtitle">Last updated May 29, 2026 · Scan window: Apr 29 – May 29, 2026 · Filtered to approved manufacturer list</div>
+      <div class="subtitle">Last updated May 30, 2026 · Scan window: Apr 30 – May 30, 2026 · Filtered to approved manufacturer list</div>
     </div>
     <div>
       <span class="badge badge-delivered">28 manufacturers monitored</span>
     </div>
   </header>
 
-  <!-- KPI Cards -->
   <div class="stats">
     <div class="stat-card info">
       <div class="label">Total Tracked</div>
@@ -241,58 +233,55 @@
     </div>
     <div class="stat-card warn">
       <div class="label">In Transit / Due</div>
-      <div class="value">1</div>
+      <div class="value">2</div>
     </div>
     <div class="stat-card ok">
       <div class="label">Delivered</div>
-      <div class="value">8</div>
+      <div class="value">9</div>
     </div>
     <div class="stat-card pending">
       <div class="label">Order Placed</div>
-      <div class="value">5</div>
+      <div class="value">3</div>
     </div>
     <div class="stat-card warn">
       <div class="label">Missing Tracking#</div>
-      <div class="value">6</div>
+      <div class="value">7</div>
     </div>
   </div>
 
-  <!-- Manufacturer mix -->
   <div class="mfg-summary">
     <h2>Active Manufacturers (last 30 days)</h2>
     <div class="mfg-bars">
       <div class="mfg-bar"><span class="name">RENO Lighting</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="count">10</span></div>
-      <div class="mfg-bar"><span class="name">CSC LED</span><div class="track"><div class="fill" style="width:30%"></div></div><span class="count">3</span></div>
+      <div class="mfg-bar"><span class="name">CSC LED</span><div class="track"><div class="fill" style="width:20%"></div></div><span class="count">2</span></div>
+      <div class="mfg-bar"><span class="name">Lotus</span><div class="track"><div class="fill" style="width:20%"></div></div><span class="count">2</span></div>
       <div class="mfg-bar"><span class="name">Satco</span><div class="track"><div class="fill" style="width:10%"></div></div><span class="count">1</span></div>
-      <div class="mfg-bar"><span class="name">Lotus</span><div class="track"><div class="fill" style="width:10%"></div></div><span class="count">1</span></div>
       <div class="mfg-bar"><span class="name">Nedco West Canada</span><div class="track"><div class="fill" style="width:10%"></div></div><span class="count">1</span></div>
     </div>
     <div style="margin-top:12px; color: var(--muted); font-size: 12px;">
-      No shipment activity in scan window from: Fulham, Green Creative, Kuzco, Light Efficient Design, NaturaLED, Premise, Standard Products, Sunpark, Sylvania/Ledvance, TCP, Turolight, Matteo, Kichler, CNA, Galaxy, IP, Advant, Kendal, Illumisoft, Alora, Tech Lighting, Visual Comfort, Flexalighting. (Kendal sent invoices only — no shipment/tracking.)
+      No activity in scan window from: Fulham, Green Creative, Kuzco, Light Efficient Design, NaturaLED, Premise, Standard Products, Sunpark, Sylvania/Ledvance, TCP, Turolight, Matteo, Kichler, CNA, Galaxy, IP, Advant, Kendal, Illumisoft, Alora, Tech Lighting, Visual Comfort, Flexalighting.
     </div>
   </div>
 
-  <!-- Flags -->
   <div class="flags-section">
     <h2>⚠ Flags &amp; Exceptions</h2>
     <div class="flag-item">
-      <span class="ship-id">SHP-002 · RENO PO 5361 (S094040)</span> — <b>OVERDUE:</b> Shipped May 19 via Purolator, 5–7 day ETA. Now 3 days past expected delivery (May 26), no confirmation received. Tracking# never sent by RENO. <b>Action:</b> Email Yassine @ RENO.
+      <span class="ship-id">SHP-002 · RENO PO 5361 (S094040)</span> — <b>DELAY:</b> Shipped May 19 via Purolator with 5–7 day ETA. 4 days past expected delivery (May 26), no confirmation received. Tracking# was never sent by RENO. <b>Action:</b> Email Yassine @ RENO.
     </div>
     <div class="flag-item">
-      <span class="ship-id">SHP-003 · RENO PO 5359 (S094008)</span> — <b>OVERDUE:</b> ETA was May 27 (now 2 days past), no delivery confirmation, no tracking# provided. <b>Action:</b> Request Western Canada Express tracking# and delivery status from Yassine.
+      <span class="ship-id">SHP-003 · RENO PO 5359 (S094008)</span> — <b>DELAY:</b> Now 3 days past expected delivery (May 27), no confirmation. Tracking# not provided. <b>Action:</b> Request Western Canada Express tracking# from Yassine.
     </div>
     <div class="flag-item">
-      <span class="ship-id">SHP-012 · Nedco West (HopeHill)</span> — PO sent May 6, now 23 days ago. No ETA, no shipment confirmation. <b>Action:</b> Follow up with Amber Larsen.
+      <span class="ship-id">SHP-012 · Nedco West (HopeHill)</span> — PO sent May 6, now 24 days ago. No ETA, no shipment confirmation. <b>Action:</b> Escalate follow-up with Amber Larsen.
     </div>
     <div class="flag-item">
-      <span class="ship-id">SHP-013 · CSC LED PO 5371 (Hopehill Bentall Oaks)</span> — Order processed / ready for pickup (May 26) but no ETA captured. Internally flagged May 28–29 ("provide ETA for PO #5371"). <b>Action:</b> Confirm pickup/ETA and coordinate collection.
+      <span class="ship-id">SHP-013 · Lotus PO 5357</span> — Invoice received May 21, but no delivery/receipt confirmation logged. <b>Action:</b> Confirm receipt at GIT / LTS.
     </div>
     <div class="flag-item">
-      <span class="ship-id">Pattern issue · RENO Lighting</span> — 6 of 10 RENO orders shipped without a tracking number in the initial confirmation email (Purolator/UPS/Western Canada Express). RENO only sends tracking on follow-up reply. Worth pushing them to include tracking on first send. Separately, packaging/damage concerns raised with Robert/William @ RENO (May 28) re: Nedco POs.
+      <span class="ship-id">Pattern issue · RENO Lighting</span> — 8 of 10 RENO orders shipped without a tracking number in the initial confirmation email (Purolator/UPS/Western Canada Express). RENO only sends tracking on follow-up. Worth pushing them to include tracking on first send.
     </div>
   </div>
 
-  <!-- Filters -->
   <div class="filters">
     <button class="filter-btn active" data-filter="all">All (16)</button>
     <button class="filter-btn" data-filter="In Transit">In Transit</button>
@@ -303,7 +292,6 @@
     <button class="filter-btn" data-filter="flagged">⚠ Flagged Only</button>
   </div>
 
-  <!-- Table -->
   <div class="table-wrap">
     <table>
       <thead>
@@ -324,15 +312,15 @@
   </div>
 
   <footer>
-    Source: Gmail (jeff@ltscanada.com) · Filtered to approved manufacturer list (CSC LED, Fulham, Green Creative, Kuzco, LED, Lotus, NaturaLED, Premise, Satco, Standard, Sunpark, Sylvania/Ledvance, TCP, Turolight, Matteo, Nedco, Kichler, CNA, Galaxy, IP, Advant, Kendal, Illumisoft, Alora, Tech, Visual Comfort, Flexa, RENO) · Tracker: shipments_tracker.json
+    Source: Gmail (jeff@ltscanada.com) + Green Image Tech warehouse receipts · Filtered to approved manufacturer list (CSC LED, Fulham, Green Creative, Kuzco, Light Efficient Design, Lotus, NaturaLED, Premise, Satco, Standard, Sunpark, Sylvania/Ledvance, TCP, Turolight, Matteo, Nedco, Kichler, CNA, Galaxy, IP, Advant, Kendal, Illumisoft, Alora, Tech, Visual Comfort, Flexa, RENO) · Tracker: shipments_tracker.json
   </footer>
 </div>
 
 <script>
 const shipments = [
   {id:"SHP-001",mfg:"RENO Lighting",so:"S094264",po:"5367",ship:"2026-05-25",carrier:"Western Canada Express",tracking:"1252480110",exp:"2026-06-02",status:"In Transit",desc:"RENO Lighting fixtures",flag:""},
-  {id:"SHP-002",mfg:"RENO Lighting",so:"S094040",po:"5361",ship:"2026-05-19",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-26",status:"Overdue",desc:"RENO Lighting fixtures",flag:"OVERDUE — 3 days past ETA, no confirmation. Request tracking from Yassine."},
-  {id:"SHP-003",mfg:"RENO Lighting",so:"S094008",po:"5359",ship:"2026-05-19",carrier:"Western Canada Express",tracking:"MISSING",exp:"2026-05-27",status:"Overdue",desc:"RENO Lighting fixtures",flag:"OVERDUE — 2 days past ETA, no delivery confirmation. Request tracking# from RENO."},
+  {id:"SHP-002",mfg:"RENO Lighting",so:"S094040",po:"5361",ship:"2026-05-19",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-26",status:"Overdue",desc:"RENO Lighting fixtures",flag:"DELAY — 4 days past ETA, no confirmation. Email Yassine for tracking."},
+  {id:"SHP-003",mfg:"RENO Lighting",so:"S094008",po:"5359",ship:"2026-05-19",carrier:"Western Canada Express",tracking:"MISSING",exp:"2026-05-27",status:"Overdue",desc:"RENO Lighting fixtures",flag:"DELAY — 3 days past ETA. Request WCE tracking# from RENO."},
   {id:"SHP-004",mfg:"Satco",so:"N/A",po:"N/A",ship:"2026-05-14",carrier:"Direct",tracking:"N/A",exp:"2026-05-15",status:"Delivered",desc:"Satco pallet — confirmed by Thanh @ GIT",flag:""},
   {id:"SHP-005",mfg:"CSC LED",so:"N/A",po:"N/A",ship:"2026-05-13",carrier:"K&H Dispatch",tracking:"N/A",exp:"2026-05-14",status:"Delivered",desc:"CSC LED panels — pallet @ GIT",flag:""},
   {id:"SHP-006",mfg:"RENO Lighting",so:"S093428",po:"5349",ship:"2026-05-05",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-11",status:"Delivered",desc:"RENO fixtures — confirmed May 6 GIT receipt",flag:""},
@@ -341,14 +329,12 @@ const shipments = [
   {id:"SHP-009",mfg:"RENO Lighting",so:"S091325",po:"5303",ship:"2026-04-28",carrier:"CCT Canada",tracking:"CC0814381",exp:"2026-05-03",status:"Delivered",desc:"CCT delivered 5 pallets May 4 (Store 9)",flag:""},
   {id:"SHP-010",mfg:"RENO Lighting",so:"S093082",po:"5341",ship:"2026-04-28",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-05",status:"Delivered",desc:"RENO Lighting fixtures",flag:""},
   {id:"SHP-011",mfg:"RENO Lighting",so:"S093057",po:"5338",ship:"2026-04-27",carrier:"UPS",tracking:"MISSING",exp:"2026-05-02",status:"Delivered",desc:"RENO Lighting fixtures",flag:""},
-  {id:"SHP-012",mfg:"Nedco West Canada",so:"N/A",po:"HopeHill",ship:"Pending",carrier:"TBD",tracking:"PENDING",exp:"TBD",status:"Order Placed",desc:"HopeHill project — PO sent May 6 to Amber Larsen",flag:"23 days since PO sent — follow up for ETA"},
-  {id:"SHP-013",mfg:"CSC LED",so:"N/A",po:"5371",ship:"Ready for pickup",carrier:"Pickup (CSC)",tracking:"PENDING",exp:"TBD",status:"Order Placed",desc:"Hopehill Bentall Oaks — processed/ready for pickup May 26",flag:"ETA outstanding for PO 5371 — confirm pickup/collection"},
-  {id:"SHP-014",mfg:"CSC LED",so:"N/A",po:"BCNPH",ship:"Ready for pickup",carrier:"Pickup (CSC)",tracking:"PENDING",exp:"TBD",status:"Order Placed",desc:"BCNPH M&C Samples — processed/ready for pickup May 28",flag:""},
-  {id:"SHP-015",mfg:"Lotus",so:"N/A",po:"HopeHill",ship:"Ready for pickup",carrier:"Pickup (Delta, BC)",tracking:"PENDING",exp:"TBD",status:"Order Placed",desc:"HopeHill 15\" SM — processed/ready for pickup May 27",flag:""},
-  {id:"SHP-016",mfg:"RENO Lighting",so:"S094536",po:"5374",ship:"Pending",carrier:"TBD",tracking:"PENDING",exp:"TBD",status:"Order Placed",desc:"RENO Lighting order — confirmation received May 29",flag:""}
+  {id:"SHP-012",mfg:"Nedco West Canada",so:"N/A",po:"HopeHill",ship:"Pending",carrier:"TBD",tracking:"MISSING",exp:"TBD",status:"Order Placed",desc:"HopeHill project — PO sent May 6 to Amber Larsen",flag:"24 days since PO sent — escalate follow-up for ETA"},
+  {id:"SHP-013",mfg:"Lotus",so:"N/A",po:"5357",ship:"2026-05-21",carrier:"TBD",tracking:"N/A",exp:"2026-05-28",status:"In Transit",desc:"Lotus LED — invoice received PO 5357 (May 21)",flag:"Invoice received, no receipt confirmation — confirm with Lotus/GIT"},
+  {id:"SHP-014",mfg:"Lotus",so:"N/A",po:"HopeHill 15\" SM",ship:"Pending",carrier:"TBD",tracking:"N/A",exp:"TBD",status:"Order Placed",desc:"HopeHill 15\" SM — PO sent May 27 to Lotus LED Lights",flag:""},
+  {id:"SHP-015",mfg:"RENO Lighting",so:"N/A",po:"BCNPH M&C Samples",ship:"Pending",carrier:"TBD",tracking:"N/A",exp:"TBD",status:"Order Placed",desc:"BCNPH M&C Samples — PO sent May 28 to RENO",flag:""},
+  {id:"SHP-016",mfg:"CSC LED",so:"N/A",po:"5376",ship:"2026-05-29",carrier:"Pickup (LTS)",tracking:"N/A",exp:"2026-05-29",status:"Delivered",desc:"CSC LED PO 5376 — picked up by LTS May 29",flag:""}
 ];
-
-let sortKey = null, sortDir = 1, currentFilter = "all";
 
 function badgeFor(status) {
   const map = {
@@ -361,10 +347,11 @@ function badgeFor(status) {
   return map[status] || "badge-transit";
 }
 
-function render(filter) {
-  if (filter !== undefined) currentFilter = filter;
-  const tbody = document.getElementById("ship-tbody");
-  tbody.innerHTML = "";
+let currentFilter = "all";
+let sortKey = null;
+let sortDir = 1;
+
+function getList() {
   let list = shipments.slice();
   if (currentFilter === "flagged") {
     list = list.filter(s => s.flag);
@@ -380,7 +367,13 @@ function render(filter) {
       return 0;
     });
   }
-  list.forEach(s => {
+  return list;
+}
+
+function render() {
+  const tbody = document.getElementById("ship-tbody");
+  tbody.innerHTML = "";
+  getList().forEach(s => {
     const trClass = s.tracking === "MISSING" ? "missing" : "";
     const row = `
       <tr>
@@ -403,7 +396,8 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    render(btn.dataset.filter);
+    currentFilter = btn.dataset.filter;
+    render();
   });
 });
 
@@ -415,8 +409,9 @@ document.querySelectorAll("th[data-sort]").forEach(th => {
   });
 });
 
-render("all");
+render();
 </script>
+
 
 <script>
 (async function() {
