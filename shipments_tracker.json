@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-31",
-  "scan_window": "Last 30 days (May 1 - May 31, 2026)",
+  "last_updated": "2026-06-01",
+  "scan_window": "Last 30 days (May 2 - June 1, 2026)",
   "approved_manufacturers": [
     "CSC LED",
     "Fulham",
@@ -44,7 +44,7 @@
       "expected_delivery": "2026-06-02",
       "status": "In Transit",
       "destination": "LTS / GIT Warehouse (Burnaby)",
-      "description": "RENO Lighting fixtures (PO 5367) \u2014 invoice IN099719 issued May 26",
+      "description": "RENO Lighting fixtures (PO 5367) — invoice IN099719 issued May 26",
       "flag": null
     },
     {
@@ -60,7 +60,7 @@
       "status": "Overdue",
       "destination": "LTS Canada",
       "description": "RENO Lighting fixtures (PO 5361)",
-      "flag": "DELAY: 5 days past ETA (May 26), no delivery confirmation, tracking# never sent. ESCALATE to Yassine @ RENO."
+      "flag": "DELAY: 6 days past ETA (May 26), no delivery confirmation, tracking# never sent. ESCALATE to Yassine @ RENO."
     },
     {
       "id": "SHP-003",
@@ -75,7 +75,7 @@
       "status": "Overdue",
       "destination": "LTS Canada",
       "description": "RENO Lighting fixtures (PO 5359)",
-      "flag": "Now 4 days past ETA (May 27), no tracking#, no confirmation. Request WCE tracking from Yassine / confirm receipt at GIT."
+      "flag": "Now 5 days past ETA (May 27), no tracking#, no confirmation. Request WCE tracking from Yassine / confirm receipt at GIT."
     },
     {
       "id": "SHP-004",
@@ -104,7 +104,7 @@
       "expected_delivery": "2026-05-14",
       "status": "Delivered",
       "destination": "Green Image Tech Warehouse",
-      "description": "CSC LED panels \u2014 pallet (confirmed by Simon @ GIT May 15)",
+      "description": "CSC LED panels — pallet (confirmed by Simon @ GIT May 15)",
       "flag": null
     },
     {
@@ -119,7 +119,7 @@
       "expected_delivery": "2026-05-11",
       "status": "Delivered",
       "destination": "LTS Canada",
-      "description": "RENO fixtures (PO 5349) \u2014 GIT confirmed arrival May 6",
+      "description": "RENO fixtures (PO 5349) — GIT confirmed arrival May 6",
       "flag": null
     },
     {
@@ -149,7 +149,7 @@
       "expected_delivery": "2026-05-05",
       "status": "Delivered",
       "destination": "LTS Canada",
-      "description": "RENO fixtures (PO 5342) \u2014 4 pallets confirmed @ GIT Apr 30",
+      "description": "RENO fixtures (PO 5342) — 4 pallets confirmed @ GIT Apr 30",
       "flag": null
     },
     {
@@ -164,7 +164,7 @@
       "expected_delivery": "2026-05-03",
       "status": "Delivered",
       "destination": "Green Image Tech Warehouse",
-      "description": "RENO \u2014 CCT delivered 5 pallets May 4 (Store 9)",
+      "description": "RENO — CCT delivered 5 pallets May 4 (Store 9)",
       "flag": null
     },
     {
@@ -209,8 +209,8 @@
       "expected_delivery": "TBD",
       "status": "Order Placed",
       "destination": "LTS Canada",
-      "description": "HopeHill project PO sent to Amber Larsen @ Nedco \u2014 awaiting ETA",
-      "flag": "25 days since PO sent \u2014 no ETA / shipment. Follow up with Amber Larsen @ Nedco."
+      "description": "HopeHill project PO sent to Amber Larsen @ Nedco — awaiting ETA",
+      "flag": "26 days since PO sent — no ETA / shipment. Follow up with Amber Larsen @ Nedco."
     },
     {
       "id": "SHP-013",
@@ -224,8 +224,8 @@
       "expected_delivery": "2026-06-04",
       "status": "In Transit",
       "destination": "LTS Canada",
-      "description": "RENO Lighting fixtures (PO 5374) \u2014 shipped May 29, order confirmed by Yassine",
-      "flag": "Tracking# not provided in ship confirmation (RENO pattern) \u2014 request from Yassine."
+      "description": "RENO Lighting fixtures (PO 5374) — shipped May 29, order confirmed by Yassine",
+      "flag": "Tracking# not provided in ship confirmation (RENO pattern) — request from Yassine."
     },
     {
       "id": "SHP-014",
@@ -238,8 +238,8 @@
       "eta_days": "Sameday",
       "expected_delivery": "2026-05-28",
       "status": "Delivered",
-      "destination": "Hopehill \u2014 3350 E 5th Ave, Vancouver",
-      "description": "Lotus LED 15\" SM \u2014 picked up Lotus Delta warehouse, sameday courier to Hopehill site",
+      "destination": "Hopehill — 3350 E 5th Ave, Vancouver",
+      "description": "Lotus LED 15\" SM — picked up Lotus Delta warehouse, sameday courier to Hopehill site",
       "flag": null
     },
     {
@@ -253,8 +253,8 @@
       "eta_days": "4-hr",
       "expected_delivery": "2026-05-27",
       "status": "Delivered",
-      "destination": "Hopehill \u2014 3350 E 5th Ave, Vancouver",
-      "description": "CSC LED \u2014 picked up CSC Port Coquitlam, 4-hr courier to Hopehill site",
+      "destination": "Hopehill — 3350 E 5th Ave, Vancouver",
+      "description": "CSC LED — picked up CSC Port Coquitlam, 4-hr courier to Hopehill site",
       "flag": null
     },
     {
@@ -269,7 +269,7 @@
       "expected_delivery": "2026-05-29",
       "status": "Delivered",
       "destination": "LTS Canada",
-      "description": "CSC LED PO 5376 \u2014 picked up by LTS May 29 (ref invoice 4089756)",
+      "description": "CSC LED PO 5376 — picked up by LTS May 29 (ref invoice 4089756)",
       "flag": null
     },
     {
@@ -284,7 +284,7 @@
       "expected_delivery": "2026-05-27",
       "status": "Delivered",
       "destination": "LTS Canada (Burnaby)",
-      "description": "Standard Products / Stanpro \u2014 2x highbays (EW Abbotsford), sameday courier from Std Products Port Coquitlam",
+      "description": "Standard Products / Stanpro — 2x highbays (EW Abbotsford), sameday courier from Std Products Port Coquitlam",
       "flag": null
     },
     {
@@ -299,8 +299,23 @@
       "expected_delivery": "Unknown",
       "status": "In Transit",
       "destination": "LTS Canada",
-      "description": "Kendal Lighting invoices 0000303696 & 0000303701 issued May 26 \u2014 goods invoiced, shipment presumed in transit",
-      "flag": "Invoices issued May 26 with no tracking/ETA \u2014 confirm carrier & shipment status with Kendal order desk."
+      "description": "Kendal Lighting invoices 0000303696 & 0000303701 issued May 26 — goods invoiced, shipment presumed in transit",
+      "flag": "6 days since invoice (May 26), still no tracking/ETA — confirm carrier & shipment status with Kendal order desk."
+    },
+    {
+      "id": "SHP-019",
+      "manufacturer": "RENO Lighting",
+      "so_number": "N/A",
+      "po_number": "MARCON RAVENNA (Type A1/A2/B2/K2/L2/G2)",
+      "ship_date": "Pending (ready to ship 2026-06-01)",
+      "carrier": "TBD",
+      "tracking_number": "N/A",
+      "eta_days": "TBD",
+      "expected_delivery": "TBD",
+      "status": "Order Placed",
+      "destination": "LTS / GIT Warehouse (Burnaby)",
+      "description": "RENO MARCON Ravenna order — Yassine confirmed 'ready to be shipped, please confirm' Jun 1. Originally placed Jan 26, items R36019/R31101 were backordered.",
+      "flag": "NEW: Order ready to ship as of Jun 1 — long-running MARCON Ravenna order (backordered since Jan). Confirm release with Yassine @ RENO to dispatch."
     }
   ]
 }
