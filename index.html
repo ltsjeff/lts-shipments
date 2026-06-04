@@ -5,31 +5,24 @@
 <title>LTS Canada – Incoming Shipments Dashboard</title>
 <style>
   :root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --card-2: #334155;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --accent: #3b82f6;
-    --green: #10b981;
-    --amber: #f59e0b;
-    --red: #ef4444;
-    --blue: #3b82f6;
-    --purple: #a855f7;
-    --border: #334155;
+    --bg: #0f172a; --card: #1e293b; --card-2: #334155; --text: #e2e8f0; --muted: #94a3b8;
+    --accent: #3b82f6; --green: #10b981; --amber: #f59e0b; --red: #ef4444; --blue: #3b82f6;
+    --purple: #a855f7; --border: #334155;
   }
   * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; }
-  .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+  .container { max-width: 1500px; margin: 0 auto; padding: 24px; }
   header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 16px; }
   h1 { font-size: 24px; margin: 0; }
   .subtitle { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
   .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
-  .badge-delivered { background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid var(--green); }
-  .badge-transit { background: rgba(59, 130, 246, 0.15); color: var(--blue); border: 1px solid var(--blue); }
-  .badge-overdue { background: rgba(239, 68, 68, 0.15); color: var(--red); border: 1px solid var(--red); }
-  .badge-due { background: rgba(245, 158, 11, 0.15); color: var(--amber); border: 1px solid var(--amber); }
-  .badge-pending { background: rgba(168, 85, 247, 0.15); color: var(--purple); border: 1px solid var(--purple); }
+  .badge-delivered { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid var(--green); }
+  .badge-transit { background: rgba(59,130,246,0.15); color: var(--blue); border: 1px solid var(--blue); }
+  .badge-overdue { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid var(--red); }
+  .badge-due { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid var(--amber); }
+  .badge-pending { background: rgba(168,85,247,0.15); color: var(--purple); border: 1px solid var(--purple); }
+
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
   .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
   .stat-card .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -39,38 +32,53 @@
   .stat-card.ok .value { color: var(--green); }
   .stat-card.info .value { color: var(--blue); }
   .stat-card.pending .value { color: var(--purple); }
+
   .flags-section { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
   .flags-section h2 { margin: 0 0 10px 0; font-size: 16px; color: var(--amber); }
   .flag-item { padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 14px; }
   .flag-item:last-child { border-bottom: none; }
   .flag-item .ship-id { font-weight: 600; color: var(--text); }
-  .mfg-summary { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
-  .mfg-summary h2 { margin: 0 0 12px 0; font-size: 16px; color: var(--text); }
-  .mfg-bars { display: grid; gap: 8px; }
-  .mfg-bar { display: grid; grid-template-columns: 160px 1fr 40px; align-items: center; gap: 12px; font-size: 13px; }
-  .mfg-bar .name { color: var(--muted); }
-  .mfg-bar .track { background: var(--card-2); border-radius: 4px; height: 10px; overflow: hidden; }
-  .mfg-bar .fill { background: var(--accent); height: 100%; border-radius: 4px; }
-  .mfg-bar .count { text-align: right; font-weight: 600; }
-  .filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-  .filter-btn { background: var(--card); color: var(--text); border: 1px solid var(--border); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; transition: all 0.15s; }
-  .filter-btn:hover { background: var(--card-2); }
-  .filter-btn.active { background: var(--accent); border-color: var(--accent); }
+
+  /* Category tabs */
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 4px; width: fit-content; }
+  .tab { background: transparent; color: var(--muted); border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; font-family: inherit; transition: all 0.15s; }
+  .tab:hover { color: var(--text); }
+  .tab.active { background: var(--accent); color: white; }
+  .tab .count { opacity: 0.7; font-weight: 400; margin-left: 4px; }
+
+  /* Secondary filters */
+  .filters-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; }
+  .filter-group { display: flex; align-items: center; gap: 8px; }
+  .filter-group label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .filter-group select, .filter-group input[type="date"] {
+    background: var(--card-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 10px; font-size: 13px; font-family: inherit;
+  }
+  .filter-group select:focus, .filter-group input:focus { outline: none; border-color: var(--accent); }
+  .clear-btn { background: transparent; color: var(--muted); border: 1px solid var(--border); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 12px; font-family: inherit; }
+  .clear-btn:hover { color: var(--text); border-color: var(--text); }
+  .results-count { margin-left: auto; color: var(--muted); font-size: 13px; }
+
   .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   thead { background: var(--card-2); }
-  th { text-align: left; padding: 12px 14px; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); white-space: nowrap; cursor: pointer; }
+  th { text-align: left; padding: 12px 14px; font-weight: 600; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); white-space: nowrap; }
   td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tr:hover td { background: rgba(255, 255, 255, 0.02); }
+  tr:hover td { background: rgba(255,255,255,0.02); }
   tr:last-child td { border-bottom: none; }
   .ship-id { font-family: monospace; color: var(--muted); font-size: 12px; }
   .mfg { font-weight: 600; }
+  .job { font-weight: 600; color: var(--accent); }
+  .job.unspec { color: var(--muted); font-style: italic; font-weight: 400; }
   .desc { color: var(--muted); font-size: 12px; }
   .tracking { font-family: monospace; font-size: 12px; }
   .tracking.missing { color: var(--red); }
-  .flag-cell { color: var(--amber); font-size: 12px; max-width: 280px; }
+  .flag-cell { color: var(--amber); font-size: 12px; max-width: 240px; }
+  .empty { padding: 40px; text-align: center; color: var(--muted); font-size: 14px; }
+
   footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; text-align: center; }
 
+  /* Password gate */
   #password-gate { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 9999; }
   #password-gate .gate-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; width: 90%; max-width: 420px; text-align: center; }
   #password-gate h2 { margin: 0 0 8px 0; font-size: 20px; color: var(--text); }
@@ -81,7 +89,6 @@
   #password-gate button:hover { opacity: 0.9; }
   #password-gate .error { color: var(--red); font-size: 13px; margin-top: 12px; min-height: 18px; }
   body.gate-locked .container { display: none; }
-
 </style>
 </head>
 <body class="gate-locked">
@@ -98,146 +105,109 @@
   </div>
 </div>
 
-
 <div class="container">
   <header>
     <div>
       <h1>Incoming Shipments — LTS Canada</h1>
-      <div class="subtitle">Last updated June 4, 2026 · Scan window: May 5 – June 4, 2026 · Filtered to approved manufacturer list</div>
+      <div class="subtitle">Last updated May 28, 2026 · Filtered to approved manufacturer list</div>
     </div>
-    <div>
-      <span class="badge badge-delivered">28 manufacturers monitored</span>
-    </div>
+    <div><span class="badge badge-delivered">28 manufacturers monitored</span></div>
   </header>
 
   <div class="stats">
-    <div class="stat-card info"><div class="label">Total Tracked</div><div class="value">21</div></div>
-    <div class="stat-card alert"><div class="label">Overdue</div><div class="value">2</div></div>
-    <div class="stat-card warn"><div class="label">In Transit / Due</div><div class="value">3</div></div>
-    <div class="stat-card ok"><div class="label">Delivered</div><div class="value">13</div></div>
-    <div class="stat-card pending"><div class="label">Order Placed</div><div class="value">3</div></div>
-    <div class="stat-card warn"><div class="label">Missing Tracking#</div><div class="value">5</div></div>
-  </div>
-
-  <div class="mfg-summary">
-    <h2>Active Manufacturers (last 30 days)</h2>
-    <div class="mfg-bars">
-      <div class="mfg-bar"><span class="name">RENO Lighting</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="count">12</span></div>
-      <div class="mfg-bar"><span class="name">CSC LED</span><div class="track"><div class="fill" style="width:33%"></div></div><span class="count">4</span></div>
-      <div class="mfg-bar"><span class="name">Satco</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="count">1</span></div>
-      <div class="mfg-bar"><span class="name">Nedco West Canada</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="count">1</span></div>
-      <div class="mfg-bar"><span class="name">Lotus</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="count">1</span></div>
-      <div class="mfg-bar"><span class="name">Standard Products</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="count">1</span></div>
-      <div class="mfg-bar"><span class="name">Kendal Lighting</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="count">1</span></div>
-    </div>
-    <div style="margin-top:12px; color: var(--muted); font-size: 12px;">
-      No activity in scan window from: Fulham, Green Creative, Kuzco, Light Efficient Design, NaturaLED, Premise, Sunpark, Sylvania/Ledvance, TCP, Turolight, Matteo Lighting, Kichler, CNA Lighting, Galaxy Lighting, IP Lighting, Advant Lighting, Illumisoft, Alora Lighting, Tech Lighting, Visual Comfort, Flexalighting.
-    </div>
+    <div class="stat-card info"><div class="label">Total Tracked</div><div class="value">12</div></div>
+    <div class="stat-card warn"><div class="label">Active</div><div class="value">4</div></div>
+    <div class="stat-card alert"><div class="label">Overdue</div><div class="value">1</div></div>
+    <div class="stat-card ok"><div class="label">Delivered</div><div class="value">8</div></div>
+    <div class="stat-card pending"><div class="label">Order Placed</div><div class="value">1</div></div>
+    <div class="stat-card warn"><div class="label">Missing Tracking#</div><div class="value">7</div></div>
   </div>
 
   <div class="flags-section">
-    <h2>&#9888; Flags &amp; Exceptions</h2>
-    <div class="flag-item">
-      <span class="ship-id">SHP-013 · RENO PO 5374 (S094536)</span> — <b>DUE TODAY (Jun 4).</b> Shipped May 29 via Purolator, no tracking# in confirmation. <b>Action:</b> Watch for GIT receipt today; request tracking from Yassine if not received.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-002 · RENO PO 5361 (S094040)</span> — <b>OVERDUE:</b> Shipped May 19 via Purolator, 5–7 day ETA. Now <b>9 days past</b> expected delivery (May 26), no confirmation, tracking# never sent. <b>Action:</b> Escalate to Yassine @ RENO.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-003 · RENO PO 5359 (S094008)</span> — <b>OVERDUE:</b> Shipped May 19 via Western Canada Express. Now <b>8 days past</b> ETA (May 27). A WCE Reno pallet was received at GIT Jun 1 (Simon) — may cover this PO. <b>Action:</b> Confirm with Simon/GIT which PO arrived; chase WCE tracking if not.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-019 · RENO MARCON Ravenna</span> — Ready to ship since Jun 1 (long-running order, backordered since Jan 26). Yassine followed up <b>again Jun 2</b> ("still no response, please advise"). <b>Action:</b> Reply to Yassine to confirm release and dispatch — now blocking RENO.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-012 · Nedco West (HopeHill)</span> — PO sent May 6, <b>29 days ago</b>. No ETA, no shipment confirmation. <b>Action:</b> Follow up with Amber Larsen @ Nedco.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-018 · Kendal Lighting</span> — Invoices 303696 &amp; 303701 issued May 26, <b>9 days ago</b>, still no tracking/ETA. <b>Action:</b> Confirm carrier &amp; shipment status with Kendal order desk.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-020 · RENO PO 5378 (S094620)</span> — <b>NEW:</b> Order confirmed by Yassine Jun 1. No ship notice yet. <b>Action:</b> Monitor for ship confirmation; expect tracking gap (RENO pattern).
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-021 · CSC LED (BCNPH M&amp;C Samples)</span> — <b>NEW:</b> CSC confirmed order processed and ready for pickup May 28. <b>Action:</b> Confirm collected by LTS / mark received.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">SHP-001 · RENO PO 5367 — RESOLVED</span> — WCE pallet (Reno Ark Halo series) confirmed delivered to GIT Jun 1 by Simon. Now marked Delivered.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">Pattern · RENO Lighting</span> — RENO continues to ship without a tracking# in the initial confirmation; RENO only supplies tracking on follow-up. Push RENO to include tracking on first send.
-    </div>
-    <div class="flag-item">
-      <span class="ship-id">Quality · Nedco / RENO packaging</span> — May 28: damage flagged on inbound fixtures (minor). Robert @ RENO reviewing with warehouse manager. Monitor next inbound for recurrence.
-    </div>
+    <h2>⚠ Flags &amp; Exceptions</h2>
+    <div id="flags-list"></div>
   </div>
 
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">All (21)</button>
-    <button class="filter-btn" data-filter="In Transit">In Transit</button>
-    <button class="filter-btn" data-filter="Due Today">Due Today</button>
-    <button class="filter-btn" data-filter="Overdue">Overdue</button>
-    <button class="filter-btn" data-filter="Order Placed">Order Placed</button>
-    <button class="filter-btn" data-filter="Delivered">Delivered</button>
-    <button class="filter-btn" data-filter="flagged">&#9888; Flagged Only</button>
+  <div class="tabs">
+    <button class="tab active" data-tab="Active">Active <span class="count" id="cnt-active">(4)</span></button>
+    <button class="tab" data-tab="Delivered">Delivered <span class="count" id="cnt-delivered">(8)</span></button>
+    <button class="tab" data-tab="All">All <span class="count" id="cnt-all">(12)</span></button>
+  </div>
+
+  <div class="filters-row">
+    <div class="filter-group">
+      <label>Job:</label>
+      <select id="filter-job">
+        <option value="">All jobs</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>From:</label>
+      <input type="date" id="filter-from" />
+    </div>
+    <div class="filter-group">
+      <label>To:</label>
+      <input type="date" id="filter-to" />
+    </div>
+    <button class="clear-btn" id="clear-filters">Clear filters</button>
+    <div class="results-count" id="results-count"></div>
   </div>
 
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th data-k="id">Ship ID</th><th data-k="mfg">Manufacturer / Item</th><th data-k="po">PO / SO</th><th data-k="carrier">Carrier</th><th data-k="tracking">Tracking #</th><th data-k="ship">Ship Date</th><th data-k="exp">Expected</th><th data-k="status">Status</th><th>Flag</th></tr>
+        <tr>
+          <th>Ship ID</th><th>Job</th><th>Manufacturer / Item</th><th>PO / SO</th><th>Carrier</th>
+          <th>Tracking #</th><th>Ship Date</th><th>Expected</th><th>Status</th><th>Flag</th>
+        </tr>
       </thead>
       <tbody id="ship-tbody"></tbody>
     </table>
   </div>
 
   <footer>
-    Source: Gmail (jeff@ltscanada.com) · Filtered to approved manufacturer list · Tracker: shipments_tracker.json · Auto-refreshed daily
+    Source: Gmail (jeff@ltscanada.com) · Filtered to approved manufacturer list · Refreshed daily at 7:02 AM · Live URL: https://ltsjeff.github.io/lts-shipments/
   </footer>
 </div>
 
 <script>
-const shipments = [
-  {id:"SHP-001",mfg:"RENO Lighting",so:"S094264",po:"5367",ship:"2026-05-25",carrier:"Western Canada Express",tracking:"1252480110",exp:"2026-06-02",status:"Delivered",desc:"RENO Ark Halo series — WCE pallet confirmed received at GIT Jun 1 by Simon (invoice IN099719 issued May 26)",flag:""},
-  {id:"SHP-002",mfg:"RENO Lighting",so:"S094040",po:"5361",ship:"2026-05-19",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-26",status:"Overdue",desc:"RENO Lighting fixtures (PO 5361)",flag:"OVERDUE: 9 days past ETA (May 26), no delivery confirmation, tracking# never sent. ESCALATE to Yassine @ RENO."},
-  {id:"SHP-003",mfg:"RENO Lighting",so:"S094008",po:"5359",ship:"2026-05-19",carrier:"Western Canada Express",tracking:"MISSING",exp:"2026-05-27",status:"Overdue",desc:"RENO Lighting fixtures (PO 5359)",flag:"OVERDUE: 8 days past ETA (May 27). WCE Reno pallet received at GIT Jun 1 may cover this — confirm PO with Simon/GIT; chase WCE tracking if not."},
-  {id:"SHP-004",mfg:"Satco",so:"N/A",po:"N/A",ship:"2026-05-14",carrier:"Direct",tracking:"N/A",exp:"2026-05-15",status:"Delivered",desc:"Satco pallet (confirmed by Thanh @ GIT May 15)",flag:""},
-  {id:"SHP-005",mfg:"CSC LED",so:"N/A",po:"N/A",ship:"2026-05-13",carrier:"K&H Dispatch",tracking:"N/A",exp:"2026-05-14",status:"Delivered",desc:"CSC LED panels — pallet (confirmed by Simon @ GIT May 15)",flag:""},
-  {id:"SHP-006",mfg:"RENO Lighting",so:"S093428",po:"5349",ship:"2026-05-05",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-11",status:"Delivered",desc:"RENO fixtures (PO 5349) — GIT confirmed arrival May 6",flag:""},
-  {id:"SHP-007",mfg:"RENO Lighting",so:"S093297",po:"5348",ship:"2026-05-01",carrier:"Apex",tracking:"WC846042",exp:"2026-05-10",status:"Delivered",desc:"RENO Lighting fixtures (PO 5348)",flag:""},
-  {id:"SHP-008",mfg:"RENO Lighting",so:"S093134",po:"5342",ship:"2026-04-28",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-05",status:"Delivered",desc:"RENO fixtures (PO 5342) — 4 pallets confirmed @ GIT Apr 30",flag:""},
-  {id:"SHP-009",mfg:"RENO Lighting",so:"S091325",po:"5303",ship:"2026-04-28",carrier:"CCT Canada",tracking:"CC0814381",exp:"2026-05-03",status:"Delivered",desc:"RENO — CCT delivered 5 pallets May 4 (Store 9)",flag:""},
-  {id:"SHP-010",mfg:"RENO Lighting",so:"S093082",po:"5341",ship:"2026-04-28",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-05-05",status:"Delivered",desc:"RENO Lighting fixtures (PO 5341)",flag:""},
-  {id:"SHP-011",mfg:"RENO Lighting",so:"S093057",po:"5338",ship:"2026-04-27",carrier:"UPS",tracking:"MISSING",exp:"2026-05-02",status:"Delivered",desc:"RENO Lighting fixtures (PO 5338)",flag:""},
-  {id:"SHP-012",mfg:"Nedco West Canada",so:"N/A",po:"HopeHill PO",ship:"Pending (PO sent 2026-05-06)",carrier:"TBD",tracking:"MISSING",exp:"TBD",status:"Order Placed",desc:"HopeHill project PO sent to Amber Larsen @ Nedco — awaiting ETA",flag:"29 days since PO sent — no ETA / shipment. Follow up with Amber Larsen @ Nedco."},
-  {id:"SHP-013",mfg:"RENO Lighting",so:"S094536",po:"5374",ship:"2026-05-29",carrier:"Purolator (Small Parcel)",tracking:"MISSING",exp:"2026-06-04",status:"Due Today",desc:"RENO Lighting fixtures (PO 5374) — shipped May 29, order confirmed by Yassine",flag:"DUE TODAY (Jun 4). Tracking# not provided in ship confirmation (RENO pattern) — watch for GIT receipt; request tracking from Yassine."},
-  {id:"SHP-014",mfg:"Lotus",so:"N/A",po:"HOPEHILL 15\" SM",ship:"2026-05-28",carrier:"DigitalWaybill courier (Sameday)",tracking:"718273",exp:"2026-05-28",status:"Delivered",desc:"Lotus LED 15\" SM — picked up Lotus Delta warehouse, sameday courier to Hopehill site",flag:""},
-  {id:"SHP-015",mfg:"CSC LED",so:"N/A",po:"Hopehill",ship:"2026-05-27",carrier:"DigitalWaybill courier (4-Hour)",tracking:"717899",exp:"2026-05-27",status:"Delivered",desc:"CSC LED — picked up CSC Port Coquitlam, 4-hr courier to Hopehill site",flag:""},
-  {id:"SHP-016",mfg:"CSC LED",so:"N/A",po:"5376",ship:"2026-05-29",carrier:"Customer pickup (LTS)",tracking:"N/A",exp:"2026-05-29",status:"Delivered",desc:"CSC LED PO 5376 — picked up by LTS May 29 (ref invoice 4089756)",flag:""},
-  {id:"SHP-017",mfg:"Standard Products",so:"N/A",po:"EW ABBY HIGHBAYS",ship:"2026-05-27",carrier:"DigitalWaybill courier (Sameday)",tracking:"717699",exp:"2026-05-27",status:"Delivered",desc:"Standard Products / Stanpro — 2x highbays (EW Abbotsford), sameday courier from Std Products Port Coquitlam",flag:""},
-  {id:"SHP-018",mfg:"Kendal Lighting",so:"N/A",po:"N/A",ship:"2026-05-26",carrier:"TBD",tracking:"MISSING",exp:"Unknown",status:"In Transit",desc:"Kendal Lighting invoices 0000303696 & 0000303701 issued May 26 — goods invoiced, shipment presumed in transit",flag:"9 days since invoice (May 26), still no tracking/ETA — confirm carrier & shipment status with Kendal order desk."},
-  {id:"SHP-019",mfg:"RENO Lighting",so:"N/A",po:"MARCON RAVENNA (Type A1/A2/B2/K2/L2/G2)",ship:"Pending (ready to ship 2026-06-01)",carrier:"TBD",tracking:"N/A",exp:"TBD",status:"Order Placed",desc:"RENO MARCON Ravenna order — ready to ship since Jun 1. Placed Jan 26; R36019/R31101 were backordered. Yassine followed up again Jun 2.",flag:"Yassine followed up AGAIN Jun 2 ('still no response, please advise'). Reply to confirm release — now blocking RENO dispatch."},
-  {id:"SHP-020",mfg:"RENO Lighting",so:"S094620",po:"5378",ship:"Pending (order confirmed 2026-06-01)",carrier:"TBD",tracking:"N/A",exp:"TBD",status:"Order Placed",desc:"RENO Lighting order — order confirmation received from Yassine Jun 1. No ship notice yet.",flag:"NEW: Order confirmed Jun 1. Monitor for ship confirmation; expect tracking gap (RENO pattern)."},
-  {id:"SHP-021",mfg:"CSC LED",so:"N/A",po:"BCNPH M&C Samples",ship:"2026-05-28",carrier:"Customer pickup (LTS)",tracking:"N/A",exp:"2026-05-28",status:"In Transit",desc:"CSC LED — BCNPH M&C sample order processed, confirmed ready for pickup May 28 (ordersbc@csc-led.com)",flag:"NEW: Ready for pickup since May 28 — confirm collected by LTS / mark received."}
-];
+const shipments = [{"id": "SHP-001", "mfg": "RENO Lighting", "so": "S094264", "po": "5367", "ship": "2026-05-25", "carrier": "Western Canada Express", "tracking": "1252480110", "exp": "2026-06-02", "status": "In Transit", "desc": "RENO Lighting fixtures", "job": "Unspecified", "flag": "", "category": "Active"}, {"id": "SHP-002", "mfg": "RENO Lighting", "so": "S094040", "po": "5361", "ship": "2026-05-19", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-05-26", "status": "Overdue", "desc": "RENO Lighting fixtures", "job": "Unspecified", "flag": "DELAY \u2014 past ETA, no confirmation. Request tracking from Yassine.", "category": "Active"}, {"id": "SHP-003", "mfg": "RENO Lighting", "so": "S094008", "po": "5359", "ship": "2026-05-19", "carrier": "Western Canada Express", "tracking": "MISSING", "exp": "2026-05-27", "status": "Due Today", "desc": "RENO Lighting fixtures", "job": "Unspecified", "flag": "Tracking# not provided \u2014 request from RENO", "category": "Active"}, {"id": "SHP-004", "mfg": "Satco", "so": "N/A", "po": "N/A", "ship": "2026-05-14", "carrier": "Direct", "tracking": "N/A", "exp": "2026-05-15", "status": "Delivered", "desc": "Satco pallet \u2014 confirmed by Thanh @ GIT", "job": "Baptist Housing - Sunridge", "flag": "", "category": "Delivered"}, {"id": "SHP-005", "mfg": "CSC LED", "so": "N/A", "po": "N/A", "ship": "2026-05-13", "carrier": "K&H Dispatch", "tracking": "N/A", "exp": "2026-05-14", "status": "Delivered", "desc": "CSC LED panels \u2014 pallet @ GIT", "job": "Unspecified", "flag": "", "category": "Delivered"}, {"id": "SHP-006", "mfg": "RENO Lighting", "so": "S093428", "po": "5349", "ship": "2026-05-05", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-05-11", "status": "Delivered", "desc": "RENO fixtures \u2014 confirmed May 6 GIT receipt", "job": "Unspecified", "flag": "", "category": "Delivered"}, {"id": "SHP-007", "mfg": "RENO Lighting", "so": "S093297", "po": "5348", "ship": "2026-05-01", "carrier": "Apex", "tracking": "WC846042", "exp": "2026-05-10", "status": "Delivered", "desc": "RENO Lighting fixtures", "job": "Unspecified", "flag": "", "category": "Delivered"}, {"id": "SHP-008", "mfg": "RENO Lighting", "so": "S093134", "po": "5342", "ship": "2026-04-28", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-05-05", "status": "Delivered", "desc": "4 pallets confirmed Apr 30 @ GIT", "job": "The Vue - Amacon", "flag": "", "category": "Delivered"}, {"id": "SHP-009", "mfg": "RENO Lighting", "so": "S091325", "po": "5303", "ship": "2026-04-28", "carrier": "CCT Canada", "tracking": "CC0814381", "exp": "2026-05-03", "status": "Delivered", "desc": "CCT delivered 5 pallets May 4 (Store 9)", "job": "The Vue - Amacon", "flag": "", "category": "Delivered"}, {"id": "SHP-010", "mfg": "RENO Lighting", "so": "S093082", "po": "5341", "ship": "2026-04-28", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-05-05", "status": "Delivered", "desc": "RENO Lighting fixtures", "job": "The Vue - Amacon", "flag": "", "category": "Delivered"}, {"id": "SHP-011", "mfg": "RENO Lighting", "so": "S093057", "po": "5338", "ship": "2026-04-27", "carrier": "UPS", "tracking": "MISSING", "exp": "2026-05-02", "status": "Delivered", "desc": "RENO Lighting fixtures", "job": "Unspecified", "flag": "", "category": "Delivered"}, {"id": "SHP-012", "mfg": "Nedco West Canada", "so": "N/A", "po": "HopeHill", "ship": "Pending", "carrier": "TBD", "tracking": "MISSING", "exp": "TBD", "status": "Order Placed", "desc": "HopeHill project \u2014 PO sent May 6 to Amber Larsen", "job": "HopeHill", "flag": "22 days since PO sent \u2014 follow up for ETA", "category": "Active"}];
+const jobs = ["Baptist Housing - Sunridge", "HopeHill", "The Vue - Amacon", "Unspecified"];
 
 function badgeFor(status) {
-  const map = { "Delivered":"badge-delivered","In Transit":"badge-transit","Overdue":"badge-overdue","Due Today":"badge-due","Order Placed":"badge-pending" };
-  return map[status] || "badge-transit";
+  return { "Delivered":"badge-delivered","In Transit":"badge-transit","Overdue":"badge-overdue","Due Today":"badge-due","Order Placed":"badge-pending" }[status] || "badge-transit";
 }
-let sortKey=null, sortAsc=true;
-function render(filter) {
+
+let currentTab = "Active";
+let filterJob = "";
+let filterFrom = "";
+let filterTo = "";
+
+function applyFilters() {
+  let list = shipments;
+  if (currentTab !== "All") list = list.filter(s => s.category === currentTab);
+  if (filterJob) list = list.filter(s => s.job === filterJob);
+  if (filterFrom) list = list.filter(s => s.ship !== "Pending" && s.ship >= filterFrom);
+  if (filterTo) list = list.filter(s => s.ship !== "Pending" && s.ship <= filterTo);
+  return list;
+}
+
+function render() {
   const tbody = document.getElementById("ship-tbody");
+  const list = applyFilters();
   tbody.innerHTML = "";
-  let list = shipments.slice();
-  if (filter === "flagged") { list = list.filter(s => s.flag); }
-  else if (filter && filter !== "all") { list = list.filter(s => s.status === filter); }
-  if (sortKey) { list.sort((a,b)=>{ let x=(a[sortKey]||"").toString(), y=(b[sortKey]||"").toString(); return sortAsc ? x.localeCompare(y) : y.localeCompare(x); }); }
+  document.getElementById("results-count").textContent = list.length + " shipment" + (list.length === 1 ? "" : "s") + " shown";
+  if (list.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="10" class="empty">No shipments match these filters.</td></tr>';
+    return;
+  }
   list.forEach(s => {
     const trClass = s.tracking === "MISSING" ? "missing" : "";
-    const row = `
+    const jobClass = s.job === "Unspecified" ? "job unspec" : "job";
+    tbody.insertAdjacentHTML("beforeend", `
       <tr>
         <td><span class="ship-id">${s.id}</span></td>
+        <td><span class="${jobClass}">${s.job}</span></td>
         <td><div class="mfg">${s.mfg}</div><div class="desc">${s.desc}</div></td>
         <td>PO ${s.po}<br/><span class="desc">SO ${s.so}</span></td>
         <td>${s.carrier}</td>
@@ -245,30 +215,57 @@ function render(filter) {
         <td>${s.ship}</td>
         <td>${s.exp}</td>
         <td><span class="badge ${badgeFor(s.status)}">${s.status}</span></td>
-        <td class="flag-cell">${s.flag || "&mdash;"}</td>
-      </tr>`;
-    tbody.insertAdjacentHTML("beforeend", row);
+        <td class="flag-cell">${s.flag || "—"}</td>
+      </tr>
+    `);
   });
 }
-let currentFilter="all";
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentFilter=btn.dataset.filter;
-    render(currentFilter);
-  });
-});
-document.querySelectorAll("th[data-k]").forEach(th => {
-  th.addEventListener("click", () => {
-    const k=th.dataset.k;
-    if (sortKey===k) sortAsc=!sortAsc; else { sortKey=k; sortAsc=true; }
-    render(currentFilter);
-  });
-});
-render("all");
-</script>
 
+// Populate job dropdown
+const sel = document.getElementById("filter-job");
+jobs.forEach(j => {
+  const opt = document.createElement("option");
+  opt.value = j; opt.textContent = j;
+  sel.appendChild(opt);
+});
+
+// Tab switching
+document.querySelectorAll(".tab").forEach(t => {
+  t.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+    t.classList.add("active");
+    currentTab = t.dataset.tab;
+    render();
+  });
+});
+
+// Filter listeners
+document.getElementById("filter-job").addEventListener("change", e => { filterJob = e.target.value; render(); });
+document.getElementById("filter-from").addEventListener("change", e => { filterFrom = e.target.value; render(); });
+document.getElementById("filter-to").addEventListener("change", e => { filterTo = e.target.value; render(); });
+
+document.getElementById("clear-filters").addEventListener("click", () => {
+  filterJob = filterFrom = filterTo = "";
+  document.getElementById("filter-job").value = "";
+  document.getElementById("filter-from").value = "";
+  document.getElementById("filter-to").value = "";
+  render();
+});
+
+// Render flags
+const flaggedShipments = shipments.filter(s => s.flag);
+const flagsList = document.getElementById("flags-list");
+if (flaggedShipments.length === 0) {
+  flagsList.innerHTML = '<div class="flag-item" style="color: var(--muted);">No flags — everything looks healthy.</div>';
+} else {
+  flaggedShipments.forEach(s => {
+    flagsList.insertAdjacentHTML("beforeend",
+      `<div class="flag-item"><span class="ship-id">${s.id} · ${s.mfg} ${s.po !== "N/A" ? "PO " + s.po : ""} · ${s.job}</span> — ${s.flag}</div>`);
+  });
+}
+
+render();
+</script>
 
 <script>
 (async function() {
@@ -296,6 +293,5 @@ render("all");
   });
 })();
 </script>
-
 </body>
 </html>
