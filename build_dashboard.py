@@ -4,18 +4,23 @@ HASH = "570597212d7561b0cf5efac437ca4bd0831a08b5e0b38556521d9f5fe5aa3888"
 
 # Shipment data with job names + categories
 shipments = [
-    {"id":"SHP-001","mfg":"RENO Lighting","so":"S094264","po":"5367","ship":"2026-05-25","carrier":"Western Canada Express","tracking":"1252480110","exp":"2026-06-02","status":"In Transit","desc":"RENO Lighting fixtures","job":"BAPTIST HOUSING SAMPLES","flag":""},
-    {"id":"SHP-002","mfg":"RENO Lighting","so":"S094040","po":"5361","ship":"2026-05-19","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-26","status":"Overdue","desc":"RENO Lighting fixtures","job":"OLS TRACK HEADS","flag":"DELAY — past ETA, no confirmation. Request tracking from Yassine."},
-    {"id":"SHP-003","mfg":"RENO Lighting","so":"S094008","po":"5359","ship":"2026-05-19","carrier":"Western Canada Express","tracking":"MISSING","exp":"2026-05-27","status":"Due Today","desc":"RENO Lighting fixtures","job":"200G - PLAZA PROJECT","flag":"Tracking# not provided — request from RENO"},
-    {"id":"SHP-004","mfg":"Satco","so":"N/A","po":"N/A","ship":"2026-05-14","carrier":"Direct","tracking":"N/A","exp":"2026-05-15","status":"Delivered","desc":"Satco pallet — confirmed by Thanh @ GIT","job":"Baptist Housing - Sunridge","flag":""},
-    {"id":"SHP-005","mfg":"CSC LED","so":"N/A","po":"N/A","ship":"2026-05-13","carrier":"K&H Dispatch","tracking":"N/A","exp":"2026-05-14","status":"Delivered","desc":"CSC LED panels — pallet @ GIT","job":"Unspecified","flag":""},
-    {"id":"SHP-006","mfg":"RENO Lighting","so":"S093428","po":"5349","ship":"2026-05-05","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-11","status":"Delivered","desc":"RENO fixtures — confirmed May 6 GIT receipt","job":"RIC SAMPLES","flag":""},
-    {"id":"SHP-007","mfg":"RENO Lighting","so":"S093297","po":"5348","ship":"2026-05-01","carrier":"Apex","tracking":"WC846042","exp":"2026-05-10","status":"Delivered","desc":"RENO Lighting fixtures","job":"PFG T8 EXTRAS","flag":""},
-    {"id":"SHP-008","mfg":"RENO Lighting","so":"S093134","po":"5342","ship":"2026-04-28","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-05","status":"Delivered","desc":"RENO fixtures for Langley project","job":"9080 198 St Langley","flag":""},
-    {"id":"SHP-009","mfg":"RENO Lighting","so":"S091325","po":"5303","ship":"2026-04-28","carrier":"CCT Canada","tracking":"CC0814381","exp":"2026-05-03","status":"Delivered","desc":"CCT delivered 5 pallets May 4 (Store 9)","job":"Store 9 / Stock","flag":""},
-    {"id":"SHP-010","mfg":"RENO Lighting","so":"S093082","po":"5341","ship":"2026-04-28","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-05","status":"Delivered","desc":"RENO Lighting fixtures","job":"777 Hornby - Samples","flag":""},
-    {"id":"SHP-011","mfg":"RENO Lighting","so":"S093057","po":"5338","ship":"2026-04-27","carrier":"UPS","tracking":"MISSING","exp":"2026-05-02","status":"Delivered","desc":"RENO Lighting fixtures","job":"RAVENNA - SAMPLE SUITES RENO","flag":""},
-    {"id":"SHP-012","mfg":"Nedco West Canada","so":"N/A","po":"HopeHill","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"HopeHill project — PO sent May 6 to Amber Larsen","job":"HopeHill","flag":"22 days since PO sent — follow up for ETA"},
+    {"id":"SHP-001","mfg":"RENO Lighting","so":"S094828","po":"5381","ship":"2026-06-05","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-06-12","status":"In Transit","desc":"RENO fixtures — shipped Jun 5, ETA 5-6 days","job":"SOF 7823","flag":"Tracking# not provided — request from RENO"},
+    {"id":"SHP-002","mfg":"RENO Lighting","so":"S094536","po":"5374","ship":"2026-05-29","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-06-09","status":"In Transit","desc":"RENO fixtures — shipped May 29, ETA 5-7 days","job":"BCNPH M&C Samples","flag":"Tracking# not provided — request from RENO"},
+    {"id":"SHP-003","mfg":"RENO Lighting","so":"S094264","po":"5367","ship":"2026-05-25","carrier":"Western Canada Express","tracking":"1252480110","exp":"2026-06-03","status":"Delivered","desc":"RENO fixtures (Ark Halo) — WCE pallet received @ GIT Jun 1, picked up by Urban Valley","job":"BAPTIST HOUSING SAMPLES","flag":""},
+    {"id":"SHP-004","mfg":"RENO Lighting","so":"S094040","po":"5361","ship":"2026-05-19","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-26","status":"Delivered","desc":"RENO Lighting fixtures — ETA passed, presumed delivered","job":"OLS TRACK HEADS","flag":""},
+    {"id":"SHP-005","mfg":"RENO Lighting","so":"S094008","po":"5359","ship":"2026-05-19","carrier":"Western Canada Express","tracking":"MISSING","exp":"2026-05-27","status":"Delivered","desc":"RENO fixtures — WCE, ETA passed, presumed delivered","job":"200G - PLAZA PROJECT","flag":""},
+    {"id":"SHP-006","mfg":"RENO Lighting","so":"N/A","po":"5378","ship":"2026-06-02","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"In Transit","desc":"RENO order — invoiced Jun 2 (IN100029), no ship notice yet","job":"DD + Remote","flag":"Invoiced but no carrier/tracking — confirm shipment with RENO"},
+    {"id":"SHP-007","mfg":"RENO Lighting","so":"N/A","po":"5377","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO sent May 29 to RENO","job":"CF Suite 250","flag":"8 days since PO — request ETA from RENO"},
+    {"id":"SHP-008","mfg":"RENO Lighting","so":"N/A","po":"5383","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO sent Jun 5 — Ashley confirms stock good","job":"SHAPE UPTOWN 8in POTS","flag":""},
+    {"id":"SHP-009","mfg":"Lotus","so":"N/A","po":"5382","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO sent Jun 5 to Lotus LED Lights","job":"SAMPLES (Lotus)","flag":""},
+    {"id":"SHP-010","mfg":"CSC LED","so":"N/A","po":"5376","ship":"2026-05-29","carrier":"Pickup","tracking":"N/A","exp":"2026-05-29","status":"Delivered","desc":"CSC processed — ready for pickup May 29","job":"BCNPH M&C Samples","flag":""},
+    {"id":"SHP-011","mfg":"CSC LED","so":"N/A","po":"N/A","ship":"2026-05-26","carrier":"Pickup","tracking":"N/A","exp":"2026-05-26","status":"Delivered","desc":"CSC processed — ready for pickup May 26","job":"Hopehill Bentall Oaks","flag":""},
+    {"id":"SHP-012","mfg":"CSC LED","so":"N/A","po":"N/A","ship":"2026-05-21","carrier":"Pickup (Urban Valley)","tracking":"N/A","exp":"2026-05-21","status":"Delivered","desc":"CSC processed — Urban Valley pickup","job":"Unico Print","flag":""},
+    {"id":"SHP-013","mfg":"CSC LED","so":"N/A","po":"N/A","ship":"On Hold","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO May 5 — price discrepancy, on hold pending revised PO","job":"SOF Port Alberni","flag":"On hold 30+ days — resolve pricing & re-release (Yash)"},
+    {"id":"SHP-014","mfg":"Standard Products","so":"N/A","po":"5379","ship":"2026-06-02","carrier":"Pickup (Cascadia)","tracking":"N/A","exp":"2026-06-02","status":"Delivered","desc":"Cascadia/Standard — ready for pickup Jun 2","job":"Hopehill DD","flag":""},
+    {"id":"SHP-015","mfg":"Satco","so":"N/A","po":"N/A","ship":"2026-05-15","carrier":"Direct","tracking":"N/A","exp":"2026-05-15","status":"Delivered","desc":"Satco pallet — confirmed by Thanh @ GIT, picked up May 22","job":"Baptist Housing - Sunridge","flag":""},
+    {"id":"SHP-016","mfg":"CSC LED","so":"N/A","po":"N/A","ship":"2026-05-14","carrier":"K&H Dispatch","tracking":"N/A","exp":"2026-05-14","status":"Delivered","desc":"CSC LED panels pallet @ GIT (K&H Dispatch)","job":"Store 9 / Stock","flag":""},
+    {"id":"SHP-017","mfg":"RENO Lighting","so":"N/A","po":"(Jan)","ship":"Backorder","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"MARCON Ravenna Reno — partial backorder (R36019/R31101); ready-to-ship confirmation pending Jun 1","job":"RAVENNA RENO A2/B2/K2/L2","flag":"Backorder since Jan + ready-to-ship pending — confirm & release"},
 ]
 
 # Compute category
@@ -336,7 +341,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 4, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 6, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
@@ -346,7 +351,7 @@ HTML = HTML.replace("__MISSING_TRACKING__", str(missing_tracking))
 HTML = HTML.replace("__SHIPMENTS_JSON__", shipments_json)
 HTML = HTML.replace("__JOBS_JSON__", jobs_json)
 
-with open("/sessions/exciting-great-wozniak/lts-work/lts-shipments/index.html", "w", encoding="utf-8") as f:
+with open("/sessions/serene-kind-mccarthy/lts-work/lts-shipments/index.html", "w", encoding="utf-8") as f:
     f.write(HTML)
 
 print("Built dashboard. Stats:")
