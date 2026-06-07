@@ -10,7 +10,7 @@ shipments = [
     {"id":"SHP-004","mfg":"RENO Lighting","so":"S094040","po":"5361","ship":"2026-05-19","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-26","status":"Delivered","desc":"RENO Lighting fixtures — ETA passed, presumed delivered","job":"OLS TRACK HEADS","flag":""},
     {"id":"SHP-005","mfg":"RENO Lighting","so":"S094008","po":"5359","ship":"2026-05-19","carrier":"Western Canada Express","tracking":"MISSING","exp":"2026-05-27","status":"Delivered","desc":"RENO fixtures — WCE, ETA passed, presumed delivered","job":"200G - PLAZA PROJECT","flag":""},
     {"id":"SHP-006","mfg":"RENO Lighting","so":"N/A","po":"5378","ship":"2026-06-02","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"In Transit","desc":"RENO order — invoiced Jun 2 (IN100029), no ship notice yet","job":"DD + Remote","flag":"Invoiced but no carrier/tracking — confirm shipment with RENO"},
-    {"id":"SHP-007","mfg":"RENO Lighting","so":"N/A","po":"5377","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO sent May 29 to RENO","job":"CF Suite 250","flag":"8 days since PO — request ETA from RENO"},
+    {"id":"SHP-007","mfg":"Sylvania/Ledvance (via Comlight)","so":"Conf# 1793719","po":"N/A","ship":"2026-05-29","carrier":"Pickup (Comlight)","tracking":"N/A","exp":"2026-05-29","status":"Delivered","desc":"Commercial Lighting (Comlight) — Conf# 1793719, ready for pickup May 29, collected","job":"CF Suite 250","flag":""},
     {"id":"SHP-008","mfg":"RENO Lighting","so":"N/A","po":"5383","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO sent Jun 5 — Ashley confirms stock good","job":"SHAPE UPTOWN 8in POTS","flag":""},
     {"id":"SHP-009","mfg":"Lotus","so":"N/A","po":"5382","ship":"Pending","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"PO sent Jun 5 to Lotus LED Lights","job":"SAMPLES (Lotus)","flag":""},
     {"id":"SHP-010","mfg":"CSC LED","so":"N/A","po":"5376","ship":"2026-05-29","carrier":"Pickup","tracking":"N/A","exp":"2026-05-29","status":"Delivered","desc":"CSC processed — ready for pickup May 29","job":"BCNPH M&C Samples","flag":""},
@@ -341,7 +341,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 6, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 7, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
@@ -351,7 +351,7 @@ HTML = HTML.replace("__MISSING_TRACKING__", str(missing_tracking))
 HTML = HTML.replace("__SHIPMENTS_JSON__", shipments_json)
 HTML = HTML.replace("__JOBS_JSON__", jobs_json)
 
-with open("/sessions/serene-kind-mccarthy/lts-work/lts-shipments/index.html", "w", encoding="utf-8") as f:
+with open("/sessions/gallant-admiring-shannon/lts-work/lts-shipments/index.html", "w", encoding="utf-8") as f:
     f.write(HTML)
 
 print("Built dashboard. Stats:")
