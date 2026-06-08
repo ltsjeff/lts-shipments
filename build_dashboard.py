@@ -4,7 +4,7 @@ HASH = "570597212d7561b0cf5efac437ca4bd0831a08b5e0b38556521d9f5fe5aa3888"
 
 # Shipment data with job names + categories
 shipments = [
-    {"id":"SHP-001","mfg":"RENO Lighting","so":"S094828","po":"5381","ship":"2026-06-05","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-06-12","status":"In Transit","desc":"RENO fixtures — shipped Jun 5, ETA 5-6 days","job":"SOF 7823","flag":"Tracking# not provided — request from RENO"},
+    {"id":"SHP-001","mfg":"RENO Lighting","so":"S094828","po":"5381","ship":"2026-06-05","carrier":"Purolator (Small Parcel)","tracking":"520572410840","exp":"2026-06-12","status":"In Transit","desc":"RENO fixtures — shipped Jun 5 (Purolator); invoice IN100225 received Jun 8","job":"SOF 7823","flag":""},
     {"id":"SHP-002","mfg":"RENO Lighting","so":"S094536","po":"5374","ship":"2026-05-29","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-06-09","status":"In Transit","desc":"RENO fixtures — shipped May 29, ETA 5-7 days","job":"BCNPH M&C Samples","flag":"Tracking# not provided — request from RENO"},
     {"id":"SHP-003","mfg":"RENO Lighting","so":"S094264","po":"5367","ship":"2026-05-25","carrier":"Western Canada Express","tracking":"1252480110","exp":"2026-06-03","status":"Delivered","desc":"RENO fixtures (Ark Halo) — WCE pallet received @ GIT Jun 1, picked up by Urban Valley","job":"BAPTIST HOUSING SAMPLES","flag":""},
     {"id":"SHP-004","mfg":"RENO Lighting","so":"S094040","po":"5361","ship":"2026-05-19","carrier":"Purolator (Small Parcel)","tracking":"MISSING","exp":"2026-05-26","status":"Delivered","desc":"RENO Lighting fixtures — ETA passed, presumed delivered","job":"OLS TRACK HEADS","flag":""},
@@ -20,7 +20,7 @@ shipments = [
     {"id":"SHP-014","mfg":"Standard Products","so":"N/A","po":"5379","ship":"2026-06-02","carrier":"Pickup (Cascadia)","tracking":"N/A","exp":"2026-06-02","status":"Delivered","desc":"Cascadia/Standard — ready for pickup Jun 2","job":"Hopehill DD","flag":""},
     {"id":"SHP-015","mfg":"Satco","so":"N/A","po":"N/A","ship":"2026-05-15","carrier":"Direct","tracking":"N/A","exp":"2026-05-15","status":"Delivered","desc":"Satco pallet — confirmed by Thanh @ GIT, picked up May 22","job":"Baptist Housing - Sunridge","flag":""},
     {"id":"SHP-016","mfg":"CSC LED","so":"N/A","po":"N/A","ship":"2026-05-14","carrier":"K&H Dispatch","tracking":"N/A","exp":"2026-05-14","status":"Delivered","desc":"CSC LED panels pallet @ GIT (K&H Dispatch)","job":"Store 9 / Stock","flag":""},
-    {"id":"SHP-017","mfg":"RENO Lighting","so":"N/A","po":"(Jan)","ship":"Backorder","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"MARCON Ravenna Reno — partial backorder (R36019/R31101); ready-to-ship confirmation pending Jun 1","job":"RAVENNA RENO A2/B2/K2/L2","flag":"Backorder since Jan + ready-to-ship pending — confirm & release"},
+    {"id":"SHP-017","mfg":"RENO Lighting","so":"N/A","po":"(Jan)","ship":"Backorder","carrier":"TBD","tracking":"MISSING","exp":"TBD","status":"Order Placed","desc":"MARCON Ravenna Reno — partial backorder (R36019/R31101); ready-to-ship confirmation pending Jun 1","job":"RAVENNA RENO A2/B2/K2/L2","flag":"Backorder since Jan; ready-to-ship confirmation was due Jun 1 — now 1 wk overdue, escalate to RENO"},
 ]
 
 # Compute category
@@ -341,7 +341,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 7, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 8, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
@@ -351,7 +351,7 @@ HTML = HTML.replace("__MISSING_TRACKING__", str(missing_tracking))
 HTML = HTML.replace("__SHIPMENTS_JSON__", shipments_json)
 HTML = HTML.replace("__JOBS_JSON__", jobs_json)
 
-with open("/sessions/gallant-admiring-shannon/lts-work/lts-shipments/index.html", "w", encoding="utf-8") as f:
+with open("/sessions/serene-amazing-fermat/lts-work/lts-shipments/index.html", "w", encoding="utf-8") as f:
     f.write(HTML)
 
 print("Built dashboard. Stats:")
