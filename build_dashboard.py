@@ -13,8 +13,8 @@ shipments = [
         "carrier": "Purolator (Small Parcel)",
         "tracking": "520572410840",
         "exp": "2026-06-12",
-        "status": "Due Today",
-        "desc": "RENO fixtures — shipped Jun 5 (Purolator, ETA 5-6); tracking 520572410840. Expected delivery window now closing",
+        "status": "Delivered",
+        "desc": "RENO fixtures \u2014 shipped Jun 5 (Purolator, ETA 5-6); tracking 520572410840. ETA window elapsed, presumed delivered",
         "job": "SOF 7823",
         "flag": ""
     },
@@ -27,10 +27,10 @@ shipments = [
         "carrier": "Purolator (Small Parcel)",
         "tracking": "MISSING",
         "exp": "2026-06-09",
-        "status": "Overdue",
-        "desc": "RENO fixtures — shipped May 29, ETA 5-7; ETA window elapsed, no delivery confirmation",
+        "status": "Delivered",
+        "desc": "RENO fixtures (samples) \u2014 shipped May 29, ETA 5-7; 19 days elapsed, presumed delivered",
         "job": "BCNPH M&C Samples",
-        "flag": "Tracking# not provided — request from RENO; ETA elapsed, confirm delivery"
+        "flag": "Tracking# never provided by RENO \u2014 close out / confirm receipt"
     },
     {
         "id": "SHP-003",
@@ -42,7 +42,7 @@ shipments = [
         "tracking": "1252480110",
         "exp": "2026-06-03",
         "status": "Delivered",
-        "desc": "RENO fixtures (Ark Halo series) — WCE pallet received @ GIT Jun 1, picked up by Urban Valley",
+        "desc": "RENO fixtures \u2014 WCE pallet received @ GIT Jun 1, picked up by Urban Valley",
         "job": "BAPTIST HOUSING SAMPLES",
         "flag": ""
     },
@@ -56,7 +56,7 @@ shipments = [
         "tracking": "MISSING",
         "exp": "2026-05-26",
         "status": "Delivered",
-        "desc": "RENO Lighting fixtures — ETA passed, presumed delivered",
+        "desc": "RENO Lighting fixtures \u2014 ETA passed, presumed delivered",
         "job": "OLS TRACK HEADS",
         "flag": ""
     },
@@ -70,7 +70,7 @@ shipments = [
         "tracking": "MISSING",
         "exp": "2026-05-27",
         "status": "Delivered",
-        "desc": "RENO fixtures — WCE, ETA passed, presumed delivered",
+        "desc": "RENO fixtures \u2014 WCE, ETA passed, presumed delivered",
         "job": "200G - PLAZA PROJECT",
         "flag": ""
     },
@@ -84,9 +84,9 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "In Transit",
-        "desc": "RENO order — invoiced Jun 2 (IN100029), no ship notice yet",
+        "desc": "RENO order \u2014 invoiced Jun 2 (IN100029), still no ship notice 15 days later",
         "job": "DD + Remote",
-        "flag": "Invoiced but no carrier/tracking — confirm shipment with RENO"
+        "flag": "Invoiced Jun 2, no carrier/tracking 15 days on \u2014 escalate to RENO"
     },
     {
         "id": "SHP-007",
@@ -98,7 +98,7 @@ shipments = [
         "tracking": "N/A",
         "exp": "2026-05-29",
         "status": "Delivered",
-        "desc": "Commercial Lighting (Comlight) — Conf# 1793719, ready for pickup May 29, collected",
+        "desc": "Commercial Lighting (Comlight) \u2014 Conf# 1793719, ready for pickup May 29, collected",
         "job": "CF Suite 250",
         "flag": ""
     },
@@ -111,8 +111,8 @@ shipments = [
         "carrier": "UPS",
         "tracking": "1ZK67E252026235962",
         "exp": "2026-06-15",
-        "status": "In Transit",
-        "desc": "RENO fixtures — PO Jun 5, shipped Jun 9 (UPS, ETA 4-6) to Shape Uptown; UPS 1ZK67E252026235962",
+        "status": "Delivered",
+        "desc": "RENO fixtures \u2014 shipped Jun 9 (UPS, ETA 4-6) to Shape Uptown; ETA window passed, presumed delivered",
         "job": "SHAPE UPTOWN 8in POTS",
         "flag": ""
     },
@@ -126,7 +126,7 @@ shipments = [
         "tracking": "N/A",
         "exp": "2026-05-29",
         "status": "Delivered",
-        "desc": "CSC processed — ready for pickup May 29",
+        "desc": "CSC processed \u2014 ready for pickup May 29",
         "job": "BCNPH M&C Samples",
         "flag": ""
     },
@@ -140,7 +140,7 @@ shipments = [
         "tracking": "N/A",
         "exp": "2026-05-26",
         "status": "Delivered",
-        "desc": "CSC processed — ready for pickup May 26",
+        "desc": "CSC processed \u2014 ready for pickup May 26",
         "job": "Hopehill Bentall Oaks",
         "flag": ""
     },
@@ -154,7 +154,7 @@ shipments = [
         "tracking": "N/A",
         "exp": "2026-05-21",
         "status": "Delivered",
-        "desc": "CSC processed — Urban Valley pickup",
+        "desc": "CSC processed \u2014 Urban Valley pickup",
         "job": "Unico Print",
         "flag": ""
     },
@@ -168,9 +168,9 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "Order Placed",
-        "desc": "PO May 5 — price discrepancy, on hold pending revised PO",
+        "desc": "PO May 5 \u2014 price discrepancy, on hold pending revised PO",
         "job": "SOF Port Alberni",
-        "flag": "On hold 30+ days — resolve pricing & re-release (Yash)"
+        "flag": "On hold 40+ days \u2014 resolve pricing & re-release (Yash)"
     },
     {
         "id": "SHP-013",
@@ -178,11 +178,11 @@ shipments = [
         "so": "N/A",
         "po": "5379",
         "ship": "2026-06-02",
-        "carrier": "Pickup (Cascadia)",
+        "carrier": "Pickup (Urban Valley)",
         "tracking": "N/A",
         "exp": "2026-06-02",
         "status": "Delivered",
-        "desc": "Cascadia/Standard — ready for pickup Jun 2",
+        "desc": "Standard Products (Cascadia) \u2014 prepaid, Urban Valley pickup",
         "job": "Hopehill DD",
         "flag": ""
     },
@@ -192,11 +192,11 @@ shipments = [
         "so": "N/A",
         "po": "N/A",
         "ship": "2026-05-15",
-        "carrier": "Direct",
+        "carrier": "N/A",
         "tracking": "N/A",
         "exp": "2026-05-15",
         "status": "Delivered",
-        "desc": "Satco pallet — confirmed by Thanh @ GIT, picked up May 22",
+        "desc": "Satco pallets sourced for Baptist Housing",
         "job": "Baptist Housing - Sunridge",
         "flag": ""
     },
@@ -206,11 +206,11 @@ shipments = [
         "so": "N/A",
         "po": "N/A",
         "ship": "2026-05-14",
-        "carrier": "K&H Dispatch",
+        "carrier": "Pickup",
         "tracking": "N/A",
         "exp": "2026-05-14",
         "status": "Delivered",
-        "desc": "CSC LED panels pallet @ GIT (K&H Dispatch)",
+        "desc": "CSC processed \u2014 store 9 / stock",
         "job": "Store 9 / Stock",
         "flag": ""
     },
@@ -224,23 +224,23 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "Order Placed",
-        "desc": "MARCON Ravenna Reno — partial backorder (R36019/R31101); ready-to-ship confirmation pending",
+        "desc": "RENO backorder since January \u2014 ready-to-ship confirmation still overdue",
         "job": "RAVENNA RENO A2/B2/K2/L2",
-        "flag": "Backorder since Jan; ready-to-ship confirmation overdue — escalate to RENO"
+        "flag": "Backorder since Jan; ready-to-ship confirmation overdue \u2014 escalate to RENO"
     },
     {
         "id": "SHP-017",
         "mfg": "RENO Lighting",
         "so": "S088807",
         "po": "5251",
-        "ship": "2026-06-10",
+        "ship": "2026-06-16",
         "carrier": "Western Canada Express",
         "tracking": "WC969446",
-        "exp": "2026-06-19",
+        "exp": "2026-06-26",
         "status": "In Transit",
-        "desc": "RENO fixtures (THE VUE types) — shipped Jun 10 (WCE, ETA 7-8) to LTS warehouse; WCE WC969446",
+        "desc": "RENO \u2014 THE VUE. First WCE pallet (shipped Jun 10) received as 8ft pallet @ GIT Jun 15; second WCE pallet re-shipped Jun 16 (ETA 7-9)",
         "job": "THE VUE - TYPE L L1 M M1 Q S 2 2A 6",
-        "flag": ""
+        "flag": "Split shipment \u2014 confirm both WCE pallets land; 2nd pallet in transit"
     },
     {
         "id": "SHP-018",
@@ -252,7 +252,7 @@ shipments = [
         "tracking": "CC0931501",
         "exp": "2026-06-23",
         "status": "In Transit",
-        "desc": "RENO fixtures — re-shipped today Jun 12 (CCT, ETA 7) to LTS warehouse; CCT CC0931501. Job confirmed PFG Reno Phase 2 per QB PO 5303 body (prior label Store 9/Stock superseded)",
+        "desc": "RENO fixtures \u2014 shipped Jun 12 (CCT, ETA 7); in transit cross-Canada",
         "job": "PFG RENO PHASE 2",
         "flag": ""
     },
@@ -266,9 +266,9 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "Order Placed",
-        "desc": "CSC LED invoice 4090311 received Jun 10 — goods likely ready; confirm associated order/pickup",
+        "desc": "CSC invoice 4090311 received Jun 10, no shipment/tracking \u2014 confirm pickup",
         "job": "Unspecified (CSC)",
-        "flag": "Invoice received Jun 10, no shipment/tracking — confirm pickup with CSC"
+        "flag": "Invoice received Jun 10, no shipment/tracking \u2014 confirm pickup with CSC"
     },
     {
         "id": "SHP-020",
@@ -280,9 +280,9 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "Order Placed",
-        "desc": "Kendal Lighting invoice 0000304058 received Jun 9 — confirm associated order/shipment",
+        "desc": "Kendal invoice received Jun 9, no shipment/tracking \u2014 confirm with Kendal",
         "job": "Unspecified (Kendal)",
-        "flag": "Invoice received Jun 9, no shipment/tracking — confirm with Kendal"
+        "flag": "Invoice received Jun 9, no shipment/tracking \u2014 confirm with Kendal"
     },
     {
         "id": "SHP-021",
@@ -294,9 +294,9 @@ shipments = [
         "tracking": "VTR40088",
         "exp": "2026-06-19",
         "status": "In Transit",
-        "desc": "RENO fixtures — PO 5389 (777 Hornby), confirmed Jun 9, shipped Jun 11 (Vitran, ETA 6-8); Vitran VTR40088",
+        "desc": "RENO \u2014 777 Hornby. Shipped Jun 11 (Vitran, ETA 6-8). Was routed to wrong Powell River address; RENO rerouted Jun 15",
         "job": "777 Hornby",
-        "flag": ""
+        "flag": "Address reroute Jun 15 \u2014 watch for delivery delay, confirm corrected destination"
     },
     {
         "id": "SHP-022",
@@ -308,9 +308,9 @@ shipments = [
         "tracking": "4831380",
         "exp": "TBD",
         "status": "In Transit",
-        "desc": "Kuzco order 5299 (C-ORD00067537) — shipped Jun 10 (K&H LTL); tracking 4831380",
+        "desc": "Kuzco \u2014 Park Place lobby. Shipped Jun 10, no estimated delivery date provided",
         "job": "PARK PLACE LOBBY",
-        "flag": "No ETA / estimated delivery date provided by Kuzco — request from K&H LTL"
+        "flag": "No ETA from Kuzco \u2014 request delivery date from K&H LTL"
     },
     {
         "id": "SHP-023",
@@ -322,7 +322,7 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "Order Placed",
-        "desc": "CSC LED — order processed Jun 8, expected to ship within 2 business days; no tracking yet",
+        "desc": "CSC \u2014 Shape Amazing Brentwood warranty replacement; no shipment yet",
         "job": "SHAPE - AMAZING BRENTWOOD WARRANTY",
         "flag": ""
     },
@@ -332,13 +332,27 @@ shipments = [
         "so": "C-ORD00075625",
         "po": "4086-R",
         "ship": "2026-06-11",
-        "carrier": "Loomis Ground",
+        "carrier": "LTL",
         "tracking": "LSHP49591980",
         "exp": "2026-06-12",
-        "status": "Due Today",
-        "desc": "Kuzco order 4086-R (C-ORD00075625) — shipped Jun 11 (Loomis Ground), stated est. delivery today Jun 12; tracking LSHP49591980",
+        "status": "Delivered",
+        "desc": "Kuzco shipment 4086-R \u2014 est delivery Jun 12, ETA passed, presumed delivered",
         "job": "Unspecified (Kuzco)",
         "flag": ""
+    },
+    {
+        "id": "SHP-025",
+        "mfg": "CSC LED",
+        "so": "Inv 4090644",
+        "po": "N/A",
+        "ship": "Pending",
+        "carrier": "TBD",
+        "tracking": "MISSING",
+        "exp": "TBD",
+        "status": "Order Placed",
+        "desc": "CSC invoice 4090644 received Jun 16 \u2014 no shipment/tracking yet, confirm pickup",
+        "job": "Unspecified (CSC)",
+        "flag": "New invoice Jun 16, no shipment/tracking \u2014 confirm pickup with CSC"
     }
 ]
 
@@ -660,7 +674,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 12, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 17, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
