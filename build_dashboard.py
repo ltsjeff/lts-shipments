@@ -224,9 +224,9 @@ shipments = [
         "tracking": "MISSING",
         "exp": "TBD",
         "status": "Order Placed",
-        "desc": "RENO backorder since January \u2014 ready-to-ship confirmation still overdue",
+        "desc": "RENO RAVENNA backorder since January. Partial RAVENNA stock received at GIT Jun 17 (PO 5266 / SO S089014); reorder placed Jun 17 (PO 5399, MARCON RAVENNA 7\" SM)",
         "job": "RAVENNA RENO A2/B2/K2/L2",
-        "flag": "Backorder since Jan; ready-to-ship confirmation overdue \u2014 escalate to RENO"
+        "flag": "Backorder since Jan \u2014 partially fulfilled Jun 17; confirm remaining balance + ETA on reorder PO 5399"
     },
     {
         "id": "SHP-017",
@@ -353,6 +353,48 @@ shipments = [
         "desc": "CSC invoice 4090644 received Jun 16 \u2014 no shipment/tracking yet, confirm pickup",
         "job": "Unspecified (CSC)",
         "flag": "New invoice Jun 16, no shipment/tracking \u2014 confirm pickup with CSC"
+    },
+    {
+        "id": "SHP-026",
+        "mfg": "RENO Lighting",
+        "so": "S089014",
+        "po": "5266",
+        "ship": "2026-06-17",
+        "carrier": "Western Canada Express",
+        "tracking": "MISSING",
+        "exp": "2026-06-17",
+        "status": "Delivered",
+        "desc": "RENO pallet received at GIT Jun 17 (Simon, Green Image Tech); WCE delivered SO S089014 / PO 5266. Tagged MARCON - RAVENNA, Yash to label",
+        "job": "MARCON - RAVENNA",
+        "flag": ""
+    },
+    {
+        "id": "SHP-027",
+        "mfg": "RENO Lighting",
+        "so": "S095362",
+        "po": "5399",
+        "ship": "Order Placed",
+        "carrier": "TBD",
+        "tracking": "MISSING",
+        "exp": "TBD",
+        "status": "Order Placed",
+        "desc": "RENO order confirmed Jun 17 (SO S095362 / PO 5399) \u2014 awaiting ship/ETA. RAVENNA 7\" SM reorder",
+        "job": "MARCON RAVENNA 7\" SM",
+        "flag": "Awaiting ship confirmation + ETA from RENO"
+    },
+    {
+        "id": "SHP-028",
+        "mfg": "CSC LED",
+        "so": "Inv 4090715 / 4090717",
+        "po": "N/A",
+        "ship": "Pending",
+        "carrier": "TBD (will-call)",
+        "tracking": "MISSING",
+        "exp": "TBD",
+        "status": "Order Placed",
+        "desc": "CSC order placed Jun 16 (PO Buy-Low Langley - Extras); order confirmation + invoices 4090715/4090717 received Jun 17-18 \u2014 likely ready for will-call pickup",
+        "job": "Buy-Low Langley - Extras",
+        "flag": "Confirm will-call pickup with CSC"
     }
 ]
 
@@ -674,7 +716,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 17, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 18, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
