@@ -7,9 +7,9 @@ shipments = [
     {
         "id": "SHP-001", "mfg": "RENO Lighting", "so": "S091325", "po": "5303",
         "ship": "2026-06-12", "carrier": "CCT", "tracking": "MISSING", "exp": "2026-06-19",
-        "status": "Due Today",
-        "desc": "RENO fixtures — shipped Jun 12 (CCT, ETA 7 days). Expected today. Revised from earlier Jun 10 notice.",
-        "job": "Store 9 / Stock", "flag": "Due today — no carrier tracking # on file; confirm arrival with GIT"
+        "status": "Overdue",
+        "desc": "RENO fixtures — shipped Jun 12 (CCT, ETA 7 days). ETA was Jun 19; now 1 day past with no GIT receipt on file.",
+        "job": "Store 9 / Stock", "flag": "Overdue 1 day — no carrier tracking # on file; confirm arrival/receipt with GIT"
     },
     {
         "id": "SHP-002", "mfg": "RENO Lighting", "so": "S088807", "po": "5251",
@@ -27,10 +27,10 @@ shipments = [
     },
     {
         "id": "SHP-004", "mfg": "Kuzco", "so": "C-ORD00067537", "po": "5299",
-        "ship": "2026-06-10", "carrier": "K&H", "tracking": "C-ORD00067537/1", "exp": "2026-06-17",
-        "status": "In Transit",
-        "desc": "PARK PLACE LOBBY — custom Kuzco PD88160-BK (via Nuvo Sales), backordered to mid-June, shipped Jun 10 (K&H). No ETA stated on notice.",
-        "job": "PARK PLACE LOBBY", "flag": "No ETA on Kuzco notice — confirm delivery/receipt"
+        "ship": "2026-06-10", "carrier": "K&H LTL", "tracking": "4831380", "exp": "2026-06-17",
+        "status": "Delivered",
+        "desc": "PARK PLACE LOBBY — custom Kuzco PD88160-BK (via Nuvo Sales), shipped Jun 10 (K&H LTL, tracking 4831380). ETA window (Jun 17) elapsed >2 days; presumed delivered.",
+        "job": "PARK PLACE LOBBY", "flag": ""
     },
     {
         "id": "SHP-005", "mfg": "CNA Lighting", "so": "", "po": "",
@@ -44,7 +44,7 @@ shipments = [
         "ship": "2026-05-20", "carrier": "", "tracking": "MISSING", "exp": "",
         "status": "Order Placed",
         "desc": "CNA bankcard order #052026 placed May 20 ($100.17). No shipment/receipt notice on file.",
-        "job": "ROGERS ARENA GU10 3K", "flag": "Stale (29 days) — likely already fulfilled/picked up; confirm and close"
+        "job": "ROGERS ARENA GU10 3K", "flag": "Stale (31 days) — likely already fulfilled/picked up; confirm and close"
     },
     {
         "id": "SHP-007", "mfg": "RENO Lighting", "so": "S089014", "po": "5266",
@@ -97,7 +97,7 @@ shipments = [
     },
     {
         "id": "SHP-014", "mfg": "Kuzco", "so": "C-ORD00075625", "po": "4086-R",
-        "ship": "2026-06-11", "carrier": "Kuzco", "tracking": "C-ORD00075625/1", "exp": "2026-06-12",
+        "ship": "2026-06-11", "carrier": "LoomisGround", "tracking": "LSHP49591980", "exp": "2026-06-12",
         "status": "Delivered",
         "desc": "Kuzco shipment 4086-R — shipped Jun 11, est. delivery Jun 12. Appears to be a warranty/replacement (-R; matching credit C-CRN00013995 + invoice C-INV00101663, $180.18).",
         "job": "Kuzco Warranty / Replacement", "flag": "Job not confirmed — verify which project this replacement belongs to"
@@ -443,7 +443,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 19, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 20, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
