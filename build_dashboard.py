@@ -7,9 +7,9 @@ shipments = [
     {
         "id": "SHP-001", "mfg": "RENO Lighting", "so": "S091325", "po": "5303",
         "ship": "2026-06-12", "carrier": "CCT", "tracking": "MISSING", "exp": "2026-06-19",
-        "status": "Overdue",
-        "desc": "RENO fixtures — shipped Jun 12 (CCT, ETA 7 days). ETA was Jun 19; now 1 day past with no GIT receipt on file.",
-        "job": "Store 9 / Stock", "flag": "Overdue 1 day — no carrier tracking # on file; confirm arrival/receipt with GIT"
+        "status": "Delivered",
+        "desc": "RENO fixtures — shipped Jun 12 (CCT, ETA 7 days). ETA was Jun 19; now 3 days past with no tracking exception — presumed delivered. Note: a first ship notice went out Jun 9 (ETA 4-5) then re-shipped Jun 12.",
+        "job": "Store 9 / Stock", "flag": "Presumed delivered (ETA+3, no carrier tracking #/GIT receipt on file); double ship-notice (Jun 9 + Jun 12) — confirm receipt with GIT"
     },
     {
         "id": "SHP-002", "mfg": "RENO Lighting", "so": "S088807", "po": "5251",
@@ -20,10 +20,10 @@ shipments = [
     },
     {
         "id": "SHP-003", "mfg": "RENO Lighting", "so": "S094971", "po": "5389",
-        "ship": "2026-06-11", "carrier": "Vitran", "tracking": "MISSING", "exp": "2026-06-19",
-        "status": "Overdue",
-        "desc": "777 Hornby — shipped Jun 11 (Vitran, ETA 6-8) but MISROUTED to Powell River. Reroute requested; RENO issued new tracking Jun 18. ETA reset.",
-        "job": "777 Hornby", "flag": "MISROUTED to Powell River — rerouted; new tracking issued Jun 18, confirm corrected ETA"
+        "ship": "2026-06-11", "carrier": "Vitran", "tracking": "MISSING", "exp": "2026-06-26",
+        "status": "In Transit",
+        "desc": "777 Hornby — shipped Jun 11 (Vitran, ETA 6-8) but MISROUTED to Powell River. Reroute completed; RENO issued new tracking Jun 18, ETA reset (~6-8 days from reroute).",
+        "job": "777 Hornby", "flag": "Was misrouted to Powell River — rerouted Jun 18 with new tracking; confirm corrected ETA / get new tracking #"
     },
     {
         "id": "SHP-004", "mfg": "Kuzco", "so": "C-ORD00067537", "po": "5299",
@@ -36,92 +36,71 @@ shipments = [
         "id": "SHP-005", "mfg": "CNA Lighting", "so": "", "po": "",
         "ship": "2026-06-10", "carrier": "", "tracking": "MISSING", "exp": "",
         "status": "Order Placed",
-        "desc": "CNA bankcard order #061026 placed Jun 10 ($1,630.91). No shipment notice yet.",
-        "job": "Canucks - Rogers Arena", "flag": "Order >7 days, no shipment notice — chase CNA for ship/ETA"
+        "desc": "CNA bankcard order #061026 placed Jun 10 ($1,630.91). No carrier shipment notice; CNA orders are typically local pickup. CNA invoices issued Jun 12 suggest it may already be fulfilled.",
+        "job": "Canucks - Rogers Arena", "flag": "Order placed 12 days ago, no ship/receipt confirmation — likely picked up locally; confirm and close"
     },
     {
-        "id": "SHP-006", "mfg": "CNA Lighting", "so": "", "po": "",
-        "ship": "2026-05-20", "carrier": "", "tracking": "MISSING", "exp": "",
-        "status": "Order Placed",
-        "desc": "CNA bankcard order #052026 placed May 20 ($100.17). No shipment/receipt notice on file.",
-        "job": "ROGERS ARENA GU10 3K", "flag": "Stale (31 days) — likely already fulfilled/picked up; confirm and close"
-    },
-    {
-        "id": "SHP-007", "mfg": "RENO Lighting", "so": "S089014", "po": "5266",
+        "id": "SHP-006", "mfg": "RENO Lighting", "so": "S089014", "po": "5266",
         "ship": "2026-06-17", "carrier": "Western Canada Express", "tracking": "", "exp": "2026-06-17",
         "status": "Delivered",
         "desc": "GIT receipt Jun 17 — WCE delivered Reno pallet (Ravenna 7\" SM). Labeled MARCON - RAVENNA at warehouse.",
         "job": "MARCON - RAVENNA", "flag": ""
     },
     {
-        "id": "SHP-008", "mfg": "RENO Lighting", "so": "", "po": "",
+        "id": "SHP-007", "mfg": "RENO Lighting", "so": "", "po": "",
         "ship": "2026-06-15", "carrier": "Western Canada Express", "tracking": "", "exp": "2026-06-15",
         "status": "Delivered",
         "desc": "GIT receipt Jun 15 — 8ft pallet from Reno delivered to warehouse.",
         "job": "Unspecified (Reno)", "flag": "No SO/PO on GIT receipt — tag at warehouse to identify job"
     },
     {
-        "id": "SHP-009", "mfg": "RENO Lighting", "so": "", "po": "",
+        "id": "SHP-008", "mfg": "RENO Lighting", "so": "", "po": "",
         "ship": "2026-06-01", "carrier": "Western Canada Express", "tracking": "", "exp": "2026-06-01",
         "status": "Delivered",
         "desc": "GIT receipt Jun 1 — WCE delivered Reno pallet (Ark Halo series). 48x40x85\", 295 lbs. Picked up by Urban Valley.",
         "job": "Unspecified (Reno Ark Halo)", "flag": "No SO/PO on GIT receipt — identify job"
     },
     {
-        "id": "SHP-010", "mfg": "RENO Lighting", "so": "S094264", "po": "5367",
+        "id": "SHP-009", "mfg": "RENO Lighting", "so": "S094264", "po": "5367",
         "ship": "2026-05-25", "carrier": "Western Canada Express", "tracking": "1252480110", "exp": "2026-06-03",
         "status": "Delivered",
         "desc": "BAPTIST HOUSING SAMPLES — shipped May 25 (WCE, ETA 8-9); tracking 1252480110. ETA window elapsed.",
         "job": "BAPTIST HOUSING SAMPLES", "flag": ""
     },
     {
-        "id": "SHP-011", "mfg": "RENO Lighting", "so": "S094536", "po": "5374",
+        "id": "SHP-010", "mfg": "RENO Lighting", "so": "S094536", "po": "5374",
         "ship": "2026-05-29", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-06-05",
         "status": "Delivered",
         "desc": "BCNPH M&C Samples — shipped May 29 (Purolator, ETA 5-7). ETA window elapsed, presumed delivered.",
         "job": "BCNPH M&C Samples", "flag": ""
     },
     {
-        "id": "SHP-012", "mfg": "RENO Lighting", "so": "S094828", "po": "5381",
+        "id": "SHP-011", "mfg": "RENO Lighting", "so": "S094828", "po": "5381",
         "ship": "2026-06-05", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-06-11",
         "status": "Delivered",
         "desc": "SOF 7823 — shipped Jun 5 (Purolator, ETA 5-6). ETA window elapsed, presumed delivered.",
         "job": "SOF 7823", "flag": ""
     },
     {
-        "id": "SHP-013", "mfg": "RENO Lighting", "so": "S094832", "po": "5383",
+        "id": "SHP-012", "mfg": "RENO Lighting", "so": "S094832", "po": "5383",
         "ship": "2026-06-09", "carrier": "UPS", "tracking": "MISSING", "exp": "2026-06-15",
         "status": "Delivered",
         "desc": "SHAPE UPTOWN 8\" POTS — shipped Jun 9 (UPS, ETA 4-6). ETA window elapsed.",
         "job": "SHAPE UPTOWN 8\" POTS", "flag": ""
     },
     {
-        "id": "SHP-014", "mfg": "Kuzco", "so": "C-ORD00075625", "po": "4086-R",
+        "id": "SHP-013", "mfg": "Kuzco", "so": "C-ORD00075625", "po": "4086-R",
         "ship": "2026-06-11", "carrier": "LoomisGround", "tracking": "LSHP49591980", "exp": "2026-06-12",
         "status": "Delivered",
         "desc": "Kuzco shipment 4086-R — shipped Jun 11, est. delivery Jun 12. Appears to be a warranty/replacement (-R; matching credit C-CRN00013995 + invoice C-INV00101663, $180.18).",
         "job": "Kuzco Warranty / Replacement", "flag": "Job not confirmed — verify which project this replacement belongs to"
     },
     {
-        "id": "SHP-015", "mfg": "Kendal Lighting", "so": "", "po": "5364",
-        "ship": "2026-05-22", "carrier": "Pickup (LTS)", "tracking": "", "exp": "2026-05-22",
-        "status": "Delivered",
-        "desc": "HEATHERLANDS PC EXTRAS — Kendal order confirmed May 22, pickup arranged by LTS.",
-        "job": "HEATHERLANDS PC EXTRAS", "flag": ""
-    },
-    {
-        "id": "SHP-016", "mfg": "Satco", "so": "", "po": "",
-        "ship": "2026-05-22", "carrier": "Pickup / Kingsley", "tracking": "", "exp": "2026-05-22",
-        "status": "Delivered",
-        "desc": "Satco pallet staged at GIT, photo confirmed May 22, picked up (BOL prepared) for onward freight to Baptist Housing - Sunridge (Salmon Arm).",
-        "job": "Baptist Housing - Sunridge", "flag": ""
-    },
-    {
-        "id": "SHP-017", "mfg": "Artika", "so": "", "po": "",
-        "ship": "2026-05-21", "carrier": "Vitran", "tracking": "", "exp": "2026-05-21",
-        "status": "Delivered",
-        "desc": "GIT receipt May 21 — Vitran delivered one pallet from Artika.",
-        "job": "Unspecified (Artika)", "flag": "Artika not on approved manufacturer list — confirm sourcing/job"
+        "id": "SHP-014", "mfg": "RENO Lighting", "so": "S095362", "po": "5399",
+        "ship": "", "carrier": "", "tracking": "MISSING", "exp": "",
+        "status": "Order Placed",
+        "desc": "MARCON RAVENNA 7\" SM — PO issued to RENO Jun 17; order confirmation received. Not yet shipped.",
+        "job": "MARCON RAVENNA 7\" SM", "flag": "Awaiting ship notice/ETA from RENO (placed 5 days ago)"
     },
 ]
 
@@ -443,7 +422,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 20, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 22, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
