@@ -13,10 +13,10 @@ shipments = [
     },
     {
         "id": "SHP-002", "mfg": "RENO Lighting", "so": "S088807", "po": "5251",
-        "ship": "2026-06-16", "carrier": "Western Canada Express", "tracking": "MISSING", "exp": "2026-06-25",
-        "status": "In Transit",
-        "desc": "THE VUE order (Type L/M/Q/S) — shipped Jun 16 (WCE, ETA 7-9). Second partial for S088807 (first shipped Jun 10).",
-        "job": "THE VUE", "flag": "No tracking # provided by RENO — request WCE PRO #"
+        "ship": "2026-06-16", "carrier": "Western Canada Express", "tracking": "WC991057", "exp": "2026-06-22",
+        "status": "Delivered",
+        "desc": "THE VUE order (Type L/M/Q/S, R31101/R31041) — shipped Jun 16 (WCE, tracking WC991057, ETA 7-9). GIT confirmed receipt Jun 22: 'Western Canada Express delivered three pallets from Reno Lighting.' Second/final partial for S088807 (first shipped Jun 10).",
+        "job": "THE VUE", "flag": ""
     },
     {
         "id": "SHP-003", "mfg": "RENO Lighting", "so": "S094971", "po": "5389",
@@ -100,7 +100,14 @@ shipments = [
         "ship": "", "carrier": "", "tracking": "MISSING", "exp": "",
         "status": "Order Placed",
         "desc": "MARCON RAVENNA 7\" SM — PO issued to RENO Jun 17; order confirmation received. Not yet shipped.",
-        "job": "MARCON RAVENNA 7\" SM", "flag": "Awaiting ship notice/ETA from RENO (placed 5 days ago)"
+        "job": "MARCON RAVENNA 7\" SM", "flag": "Awaiting ship notice/ETA from RENO (placed 6 days ago)"
+    },
+    {
+        "id": "SHP-015", "mfg": "RENO Lighting", "so": "", "po": "",
+        "ship": "2026-06-22", "carrier": "Storm Electric (internal drop-off)", "tracking": "", "exp": "2026-06-22",
+        "status": "Delivered",
+        "desc": "GIT receipt Jun 22 — Storm Electric dropped off (2) 8ft Reno boxes at the warehouse (same day GIT received the THE VUE WCE pallets).",
+        "job": "Unspecified (Reno 8ft)", "flag": "No SO/PO on GIT receipt — tag at warehouse to identify job/project"
     },
 ]
 
@@ -422,7 +429,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 22, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 23, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
