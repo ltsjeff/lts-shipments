@@ -8,28 +8,28 @@ shipments = [
         "id": "SHP-001", "mfg": "RENO Lighting", "so": "S091325", "po": "5303",
         "ship": "2026-06-12", "carrier": "CCT", "tracking": "MISSING", "exp": "2026-06-19",
         "status": "Delivered",
-        "desc": "RENO fixtures — shipped Jun 12 (CCT, ETA 7 days). ETA was Jun 19; now 3 days past with no tracking exception — presumed delivered. Note: a first ship notice went out Jun 9 (ETA 4-5) then re-shipped Jun 12.",
-        "job": "Store 9 / Stock", "flag": "Presumed delivered (ETA+3, no carrier tracking #/GIT receipt on file); double ship-notice (Jun 9 + Jun 12) — confirm receipt with GIT"
+        "desc": "RENO fixtures \u2014 shipped Jun 12 (CCT, ETA 7 days). ETA was Jun 19; now 3 days past with no tracking exception \u2014 presumed delivered. Note: a first ship notice went out Jun 9 (ETA 4-5) then re-shipped Jun 12.",
+        "job": "Store 9 / Stock", "flag": "Presumed delivered (ETA+3, no carrier tracking #/GIT receipt on file); double ship-notice (Jun 9 + Jun 12) \u2014 confirm receipt with GIT"
     },
     {
         "id": "SHP-002", "mfg": "RENO Lighting", "so": "S088807", "po": "5251",
         "ship": "2026-06-16", "carrier": "Western Canada Express", "tracking": "WC991057", "exp": "2026-06-22",
         "status": "Delivered",
-        "desc": "THE VUE order (Type L/M/Q/S, R31101/R31041) — shipped Jun 16 (WCE, tracking WC991057, ETA 7-9). GIT confirmed receipt Jun 22: 'Western Canada Express delivered three pallets from Reno Lighting.' Second/final partial for S088807 (first shipped Jun 10).",
+        "desc": "THE VUE order (Type L/M/Q/S, R31101/R31041) \u2014 shipped Jun 16 (WCE, tracking WC991057, ETA 7-9). GIT confirmed receipt Jun 22: 'Western Canada Express delivered three pallets from Reno Lighting.' Second/final partial for S088807 (first shipped Jun 10).",
         "job": "THE VUE", "flag": ""
     },
     {
         "id": "SHP-003", "mfg": "RENO Lighting", "so": "S094971", "po": "5389",
         "ship": "2026-06-11", "carrier": "Vitran", "tracking": "MISSING", "exp": "2026-06-26",
         "status": "In Transit",
-        "desc": "777 Hornby — shipped Jun 11 (Vitran, ETA 6-8) but MISROUTED to Powell River. Reroute completed; RENO issued new tracking Jun 18, ETA reset (~6-8 days from reroute).",
-        "job": "777 Hornby", "flag": "Was misrouted to Powell River — rerouted Jun 18 with new tracking; confirm corrected ETA / get new tracking #"
+        "desc": "777 Hornby \u2014 RENO confirmed 'SO# S094971 / PO# 5389 has been shipped!' (Jun 23). Earlier shipment was misrouted to Powell River and rerouted Jun 18 with new tracking. ETA ~Jun 26.",
+        "job": "777 Hornby", "flag": "Was misrouted to Powell River (rerouted Jun 18); confirm new tracking # and corrected ETA with RENO"
     },
     {
         "id": "SHP-004", "mfg": "Kuzco", "so": "C-ORD00067537", "po": "5299",
         "ship": "2026-06-10", "carrier": "K&H LTL", "tracking": "4831380", "exp": "2026-06-17",
         "status": "Delivered",
-        "desc": "PARK PLACE LOBBY — custom Kuzco PD88160-BK (via Nuvo Sales), shipped Jun 10 (K&H LTL, tracking 4831380). ETA window (Jun 17) elapsed >2 days; presumed delivered.",
+        "desc": "PARK PLACE LOBBY \u2014 custom Kuzco PD88160-BK (via Nuvo Sales), shipped Jun 10 (K&H LTL, tracking 4831380). ETA window (Jun 17) elapsed >2 days; presumed delivered.",
         "job": "PARK PLACE LOBBY", "flag": ""
     },
     {
@@ -37,77 +37,119 @@ shipments = [
         "ship": "2026-06-10", "carrier": "", "tracking": "MISSING", "exp": "",
         "status": "Order Placed",
         "desc": "CNA bankcard order #061026 placed Jun 10 ($1,630.91). No carrier shipment notice; CNA orders are typically local pickup. CNA invoices issued Jun 12 suggest it may already be fulfilled.",
-        "job": "Canucks - Rogers Arena", "flag": "Order placed 12 days ago, no ship/receipt confirmation — likely picked up locally; confirm and close"
+        "job": "Canucks - Rogers Arena", "flag": "Order placed 12 days ago, no ship/receipt confirmation \u2014 likely picked up locally; confirm and close"
     },
     {
         "id": "SHP-006", "mfg": "RENO Lighting", "so": "S089014", "po": "5266",
         "ship": "2026-06-17", "carrier": "Western Canada Express", "tracking": "", "exp": "2026-06-17",
         "status": "Delivered",
-        "desc": "GIT receipt Jun 17 — WCE delivered Reno pallet (Ravenna 7\" SM). Labeled MARCON - RAVENNA at warehouse.",
+        "desc": "GIT receipt Jun 17 \u2014 WCE delivered Reno pallet (Ravenna 7\" SM). Labeled MARCON - RAVENNA at warehouse.",
         "job": "MARCON - RAVENNA", "flag": ""
     },
     {
         "id": "SHP-007", "mfg": "RENO Lighting", "so": "", "po": "",
         "ship": "2026-06-15", "carrier": "Western Canada Express", "tracking": "", "exp": "2026-06-15",
         "status": "Delivered",
-        "desc": "GIT receipt Jun 15 — 8ft pallet from Reno delivered to warehouse.",
-        "job": "Unspecified (Reno)", "flag": "No SO/PO on GIT receipt — tag at warehouse to identify job"
+        "desc": "GIT receipt Jun 15 \u2014 8ft pallet from Reno delivered to warehouse.",
+        "job": "Unspecified (Reno)", "flag": "No SO/PO on GIT receipt \u2014 tag at warehouse to identify job"
     },
     {
         "id": "SHP-008", "mfg": "RENO Lighting", "so": "", "po": "",
         "ship": "2026-06-01", "carrier": "Western Canada Express", "tracking": "", "exp": "2026-06-01",
         "status": "Delivered",
-        "desc": "GIT receipt Jun 1 — WCE delivered Reno pallet (Ark Halo series). 48x40x85\", 295 lbs. Picked up by Urban Valley.",
-        "job": "Unspecified (Reno Ark Halo)", "flag": "No SO/PO on GIT receipt — identify job"
+        "desc": "GIT receipt Jun 1 \u2014 WCE delivered Reno pallet (Ark Halo series). 48x40x85\", 295 lbs. Picked up by Urban Valley.",
+        "job": "Unspecified (Reno Ark Halo)", "flag": "No SO/PO on GIT receipt \u2014 identify job"
     },
     {
         "id": "SHP-009", "mfg": "RENO Lighting", "so": "S094264", "po": "5367",
         "ship": "2026-05-25", "carrier": "Western Canada Express", "tracking": "1252480110", "exp": "2026-06-03",
         "status": "Delivered",
-        "desc": "BAPTIST HOUSING SAMPLES — shipped May 25 (WCE, ETA 8-9); tracking 1252480110. ETA window elapsed.",
+        "desc": "BAPTIST HOUSING SAMPLES \u2014 shipped May 25 (WCE, ETA 8-9); tracking 1252480110. ETA window elapsed.",
         "job": "BAPTIST HOUSING SAMPLES", "flag": ""
     },
     {
         "id": "SHP-010", "mfg": "RENO Lighting", "so": "S094536", "po": "5374",
         "ship": "2026-05-29", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-06-05",
         "status": "Delivered",
-        "desc": "BCNPH M&C Samples — shipped May 29 (Purolator, ETA 5-7). ETA window elapsed, presumed delivered.",
+        "desc": "BCNPH M&C Samples \u2014 shipped May 29 (Purolator, ETA 5-7). ETA window elapsed, presumed delivered.",
         "job": "BCNPH M&C Samples", "flag": ""
     },
     {
         "id": "SHP-011", "mfg": "RENO Lighting", "so": "S094828", "po": "5381",
         "ship": "2026-06-05", "carrier": "Purolator (Small Parcel)", "tracking": "MISSING", "exp": "2026-06-11",
         "status": "Delivered",
-        "desc": "SOF 7823 — shipped Jun 5 (Purolator, ETA 5-6). ETA window elapsed, presumed delivered.",
+        "desc": "SOF 7823 \u2014 shipped Jun 5 (Purolator, ETA 5-6). ETA window elapsed, presumed delivered.",
         "job": "SOF 7823", "flag": ""
     },
     {
         "id": "SHP-012", "mfg": "RENO Lighting", "so": "S094832", "po": "5383",
         "ship": "2026-06-09", "carrier": "UPS", "tracking": "MISSING", "exp": "2026-06-15",
         "status": "Delivered",
-        "desc": "SHAPE UPTOWN 8\" POTS — shipped Jun 9 (UPS, ETA 4-6). ETA window elapsed.",
+        "desc": "SHAPE UPTOWN 8\" POTS \u2014 shipped Jun 9 (UPS, ETA 4-6). ETA window elapsed.",
         "job": "SHAPE UPTOWN 8\" POTS", "flag": ""
     },
     {
         "id": "SHP-013", "mfg": "Kuzco", "so": "C-ORD00075625", "po": "4086-R",
         "ship": "2026-06-11", "carrier": "LoomisGround", "tracking": "LSHP49591980", "exp": "2026-06-12",
         "status": "Delivered",
-        "desc": "Kuzco shipment 4086-R — shipped Jun 11, est. delivery Jun 12. Appears to be a warranty/replacement (-R; matching credit C-CRN00013995 + invoice C-INV00101663, $180.18).",
-        "job": "Kuzco Warranty / Replacement", "flag": "Job not confirmed — verify which project this replacement belongs to"
+        "desc": "Kuzco shipment 4086-R \u2014 shipped Jun 11, est. delivery Jun 12. Appears to be a warranty/replacement (-R; matching credit C-CRN00013995 + invoice C-INV00101663, $180.18).",
+        "job": "Kuzco Warranty / Replacement", "flag": "Job not confirmed \u2014 verify which project this replacement belongs to"
     },
     {
         "id": "SHP-014", "mfg": "RENO Lighting", "so": "S095362", "po": "5399",
         "ship": "", "carrier": "", "tracking": "MISSING", "exp": "",
         "status": "Order Placed",
-        "desc": "MARCON RAVENNA 7\" SM — PO issued to RENO Jun 17; order confirmation received. Not yet shipped.",
-        "job": "MARCON RAVENNA 7\" SM", "flag": "Awaiting ship notice/ETA from RENO (placed 6 days ago)"
+        "desc": "MARCON RAVENNA 7\" SM \u2014 PO issued to RENO Jun 17; order confirmation received. Not yet shipped.",
+        "job": "MARCON RAVENNA 7\" SM", "flag": "Order placed/confirmed Jun 17 \u2014 7 days, no ship notice yet; follow up with RENO for ETA"
     },
     {
         "id": "SHP-015", "mfg": "RENO Lighting", "so": "", "po": "",
         "ship": "2026-06-22", "carrier": "Storm Electric (internal drop-off)", "tracking": "", "exp": "2026-06-22",
         "status": "Delivered",
-        "desc": "GIT receipt Jun 22 — Storm Electric dropped off (2) 8ft Reno boxes at the warehouse (same day GIT received the THE VUE WCE pallets).",
-        "job": "Unspecified (Reno 8ft)", "flag": "No SO/PO on GIT receipt — tag at warehouse to identify job/project"
+        "desc": "GIT receipt Jun 22 \u2014 Storm Electric dropped off (2) 8ft Reno boxes at the warehouse (same day GIT received the THE VUE WCE pallets).",
+        "job": "Unspecified (Reno 8ft)", "flag": "No SO/PO on GIT receipt \u2014 tag at warehouse to identify job/project"
+    },
+    {
+        "id": "SHP-016", "mfg": "RENO Lighting", "so": "S095544", "po": "5405",
+        "ship": "", "carrier": "", "tracking": "MISSING", "exp": "",
+        "status": "Order Placed",
+        "desc": "RENO order confirmation received Jun 23 (SO# S095544 / PO# 5405). Awaiting ship date/ETA.",
+        "job": "Unspecified (RENO PO 5405)", "flag": "Newly placed Jun 23 \u2014 identify job at warehouse and request ETA/tracking"
+    },
+    {
+        "id": "SHP-017", "mfg": "RENO Lighting", "so": "S095542", "po": "5393",
+        "ship": "", "carrier": "", "tracking": "MISSING", "exp": "2026-07-15",
+        "status": "Order Placed",
+        "desc": "RENO order confirmation Jun 23 (SO# S095542 / PO# 5393). PARTIAL: only 62x R39208 in stock \u2014 RENO shipping what they have; remainder on backorder until 2026-07-15.",
+        "job": "Unspecified (RENO PO 5393)", "flag": "Partial order \u2014 balance of R39208 backordered to Jul 15, 2026; identify job"
+    },
+    {
+        "id": "SHP-018", "mfg": "Advant Lighting", "so": "", "po": "5404",
+        "ship": "2026-06-23", "carrier": "Green Image Tech (local)", "tracking": "", "exp": "2026-06-23",
+        "status": "Delivered",
+        "desc": "MHOND CEILING ADVANT \u2014 Hazel 275 E 14th Ave. PO 5404 to Green Image Tech (Advant fixtures). GIT confirmed 'Order is ready for pickup. Four boxes.' Jun 23 \u2014 goods at GIT warehouse.",
+        "job": "Hazel 275 E 14th Ave (Mhond)", "flag": ""
+    },
+    {
+        "id": "SHP-019", "mfg": "Ortech (via GIT)", "so": "", "po": "",
+        "ship": "2026-06-23", "carrier": "Green Image Tech (receipt)", "tracking": "", "exp": "2026-06-23",
+        "status": "Delivered",
+        "desc": "GIT receipt Jun 23 \u2014 'a pallet of Ortech products delivered' (packing list attached). Likely Hopehill/Baptist Ortech pots.",
+        "job": "Hopehill / Baptist (Ortech)", "flag": "Ortech not on approved mfg list \u2014 included as GIT warehouse receipt; confirm job from packing slip"
+    },
+    {
+        "id": "SHP-020", "mfg": "CSC LED", "so": "", "po": "",
+        "ship": "2026-06-22", "carrier": "Local pickup (Burnaby)", "tracking": "", "exp": "2026-06-22",
+        "status": "Delivered",
+        "desc": "CSC LED 'Storm 4' Vapour Tight, 3 pcs' \u2014 order processed Jun 22, CSC confirmed ready for local pickup ('feel free to pick up anytime'). Andrew arranging pickup.",
+        "job": "Storm Electric", "flag": ""
+    },
+    {
+        "id": "SHP-021", "mfg": "RENO Lighting", "so": "", "po": "",
+        "ship": "2026-06-22", "carrier": "Storm Electric (drop-off)", "tracking": "", "exp": "2026-06-22",
+        "status": "Delivered",
+        "desc": "GIT receipt Jun 22 \u2014 Storm Electric dropped off (2) 8FT Reno boxes at the warehouse.",
+        "job": "Unspecified (Reno 8ft via Storm)", "flag": "No SO/PO on GIT receipt \u2014 tag at warehouse to identify job"
     },
 ]
 
@@ -429,7 +471,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 23, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 24, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
