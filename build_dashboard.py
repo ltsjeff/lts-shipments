@@ -41,10 +41,10 @@ shipments = [
         "carrier": "Vitran",
         "tracking": "MISSING",
         "exp": "2026-06-26",
-        "status": "In Transit",
-        "desc": "777 Hornby — RENO confirmed 'SO# S094971 / PO# 5389 has been shipped!' (Jun 11, Vitran, ETA 6-8). Earlier misrouted to Powell River, rerouted ~Jun 18 with new tracking. ETA ~Jun 26.",
+        "status": "Delivered",
+        "desc": "777 Hornby — RENO confirmed 'SO# S094971 / PO# 5389 has been shipped!' (Jun 11, Vitran, ETA 6-8). Earlier misrouted to Powell River, rerouted ~Jun 18 with new tracking. GIT confirmed receipt Jun 26: 'Vitran delivered a pallet from Reno' (packing slip attached). DELIVERED.",
         "job": "777 Hornby",
-        "flag": "Was misrouted to Powell River (rerouted ~Jun 18); confirm new tracking # and corrected ETA with RENO"
+        "flag": ""
     },
     {
         "id": "SHP-004",
@@ -72,7 +72,7 @@ shipments = [
         "status": "Order Placed",
         "desc": "CNA bankcard order #061026 placed Jun 10 ($1,630.91). No carrier shipment notice; CNA orders are typically local pickup. CNA invoices Jun 12 suggest it may already be fulfilled.",
         "job": "Canucks - Rogers Arena",
-        "flag": "Order placed 15 days ago, no ship/receipt confirmation — likely picked up locally; confirm and close"
+        "flag": "Order placed 16 days ago, no ship/receipt confirmation — likely picked up locally; confirm and close"
     },
     {
         "id": "SHP-006",
@@ -198,7 +198,7 @@ shipments = [
         "status": "Order Placed",
         "desc": "MARCON RAVENNA 7\" SM — PO issued to RENO Jun 17; order confirmation received. Not yet shipped.",
         "job": "MARCON RAVENNA 7\" SM",
-        "flag": "Order placed/confirmed Jun 17 — 8 days, no ship notice yet; follow up with RENO for ETA"
+        "flag": "Order placed/confirmed Jun 17 — 9 days, no ship notice yet; follow up with RENO for ETA"
     },
     {
         "id": "SHP-015",
@@ -311,6 +311,48 @@ shipments = [
         "desc": "Onlumi (Shenzhen) LED strip/connector order — payment confirmed via FX/wire Jun 24; goods sent by DHL Jun 25, tracking 7754899854 (PL + CI attached).",
         "job": "Unspecified (Onlumi strip/connectors)",
         "flag": "Onlumi not on approved mfg list — included as confirmed inbound DHL shipment. International transit; confirm ETA + assign to job/stock"
+    },
+    {
+        "id": "SHP-023",
+        "mfg": "RENO Lighting",
+        "so": "S091325",
+        "po": "5303",
+        "ship": "2026-06-26",
+        "carrier": "Western Canada Express",
+        "tracking": "MISSING",
+        "exp": "2026-07-06",
+        "status": "In Transit",
+        "desc": "Store 9 / Stock — RENO SO# S091325 / PO# 5303 reshipped Jun 26 (WCE, ETA 7-8). Recurring stock SO (prior ship events Jun 9 + Jun 12 CCT, both received). Latest partial in transit.",
+        "job": "Store 9 / Stock",
+        "flag": "No carrier tracking # on the ship notice — request WCE PRO/tracking from RENO"
+    },
+    {
+        "id": "SHP-024",
+        "mfg": "RENO Lighting",
+        "so": "",
+        "po": "",
+        "ship": "2026-06-25",
+        "carrier": "Western Canada Express",
+        "tracking": "",
+        "exp": "2026-06-25",
+        "status": "Delivered",
+        "desc": "GIT receipt Jun 25 — 'WCE delivered a pallet from Reno' (first page of packing slip attached). Warehouse arrival; SO/PO to be confirmed from packing slip.",
+        "job": "Unspecified (Reno)",
+        "flag": "No SO/PO on GIT receipt — tag at warehouse to identify job/PO"
+    },
+    {
+        "id": "SHP-025",
+        "mfg": "Nedco West Canada",
+        "so": "",
+        "po": "5406",
+        "ship": "",
+        "carrier": "",
+        "tracking": "MISSING",
+        "exp": "",
+        "status": "Order Placed",
+        "desc": "MAPLE TOWERS - NEDCO — PO issued to Nedco West Canada Jun 25 (QuickBooks). Awaiting ETA / ship confirmation.",
+        "job": "Maple Towers",
+        "flag": "PO sent Jun 25 — request ETA from Nedco; PO# 5406 assumed (confirm from PDF)"
     }
 ]
 
@@ -632,7 +674,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jun 25, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jun 26, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
