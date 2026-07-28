@@ -59,6 +59,10 @@ shipments = [
     {"id": "SHP-053", "mfg": "CNA Lighting", "so": "", "po": "", "ship": "2026-07-22", "carrier": "Urban Valley (local courier)", "tracking": "731728", "exp": "2026-07-22", "status": "Delivered", "desc": "MAPLE TOWERS - CNA - CNA (Alan Yang) confirmed PO Jul 22; courier order 731728 (2 Hour Rush) picked up from CNA Lighting (Burnaby) direct to Maple Towers site (11841 222 St, Maple Ridge) Jul 22.", "job": "Maple Towers", "flag": ""},
     {"id": "SHP-054", "mfg": "RENO Lighting", "so": "", "po": "", "ship": "", "carrier": "", "tracking": "MISSING", "exp": "", "status": "Order Placed", "desc": "BE - RENO TYPE L1 - PO to RENO Jul 22 (QuickBooks); Yassine (RENO) acknowledged Jul 22, Jeff advised ~2-3 week lead, will email for release. Awaiting release/ETA.", "job": "Bridge & Elliot (RENO Type L1)", "flag": "New PO Jul 22 - 2-3 week lead; follow up for release date/ETA"},
     {"id": "SHP-055", "mfg": "Ortech (via Crown Distributors)", "so": "", "po": "", "ship": "", "carrier": "", "tracking": "MISSING", "exp": "", "status": "Order Placed", "desc": "BE - ORTECH TYPE 2A - PO to Crown Distributors (Ortech) Jul 22; Nav (Crown) confirmed order on HOLD until release as requested Jul 22. Crown invoice 3018987 Jul 22.", "job": "Bridge & Elliot (Ortech Type 2A)", "flag": "Ortech not on approved mfg list - on hold until release; advise release date"},
+    {"id": "SHP-056", "mfg": "RENO Lighting", "so": "S096887", "po": "5438", "ship": "2026-07-27", "carrier": "Day & Ross", "tracking": "A11627100", "exp": "2026-08-03", "status": "In Transit", "desc": "PFG EXTRAS T5 \u2014 RENO SO# S096887 / PO# 5438 SHIPPED Jul 27 (Day & Ross, ETA 4-5 days, tracking A11627100, ref WH/OUT/40050). Track at dayross.com.", "job": "PFG EXTRAS T5", "flag": ""},
+    {"id": "SHP-057", "mfg": "RENO Lighting", "so": "S096925", "po": "5439", "ship": "2026-07-28", "carrier": "Day & Ross", "tracking": "A11639512", "exp": "2026-08-03", "status": "In Transit", "desc": "OM CASTLE PARKADE \u2014 RENO SO# S096925 / PO# 5439 SHIPPED Jul 28 (Day & Ross, ETA 4 days, tracking A11639512, ref WH/OUT/40109). Shipped today.", "job": "OM CASTLE PARKADE", "flag": ""},
+    {"id": "SHP-058", "mfg": "RENO Lighting", "so": "S091325", "po": "5303", "ship": "2026-07-27", "carrier": "Day & Ross", "tracking": "MISSING", "exp": "2026-08-03", "status": "In Transit", "desc": "Store 9 / Stock \u2014 recurring stock SO S091325 / PO 5303 reshipped again Jul 27 (Day & Ross, ETA 4-5 days, ref WH/OUT/38817). Third reship of this recurring SO (prior: SHP-001 Jun 12, SHP-023 Jun 26). No carrier tracking # on the RENO notice.", "job": "Store 9 / Stock", "flag": "MISSING TRACKING: RENO shipped notice had no carrier tracking # \u2014 request Day & Ross PRO from RENO"},
+    {"id": "SHP-059", "mfg": "Kuzco", "so": "", "po": "5432", "ship": "", "carrier": "Ships via Nuvo Sales", "tracking": "MISSING", "exp": "", "status": "Order Placed", "desc": "BRIDGE AND ELLIOT KUZCO \u2014 Kuzco PO 5432 (via Nuvo Sales). Sharon @ Nuvo forwarded order confirmation with ESDs Jul 27. Awaiting ship/tracking.", "job": "Bridge & Elliot (Kuzco)", "flag": "Order confirmed w/ ESDs Jul 27 \u2014 monitor for ship notice & carrier tracking #"},
 ]
 
 # Compute category
@@ -379,7 +383,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Jul 24, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Jul 28, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
