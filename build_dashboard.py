@@ -72,6 +72,8 @@ shipments = [
     {"id": "SHP-066", "mfg": "CSC LED", "so": "4092331", "po": "5437", "ship": "2026-08-04", "carrier": "Digital Waybill (Sameday, local)", "tracking": "734114", "exp": "2026-08-04", "status": "Delivered", "desc": "WOODLANDS - R1 CSC — CSC LED order receipt 4092331 (Jul 30), invoiced Aug 5. Digital Waybill order 734114 (Sameday) picked up at CSC LED (Port Coquitlam) for delivery to Intergulf - Woodlands (2377 E 11 Ave) Aug 4.", "job": "Woodlands (R1 CSC)", "flag": "Local same-day delivery direct to Woodlands site — confirm site receipt"},
     {"id": "SHP-067", "mfg": "CSC LED", "so": "4092295", "po": "", "ship": "2026-07-30", "carrier": "Digital Waybill (Direct, local)", "tracking": "733686", "exp": "2026-07-30", "status": "Delivered", "desc": "CSC LED order receipt 4092295 (Jul 30), invoiced Jul 31. Digital Waybill order 733686 (Direct) picked up at CSC LED (Port Coquitlam) for delivery to Maple Towers (11841 222 St, Maple Ridge) Jul 30.", "job": "Maple Towers", "flag": "Local same-day delivery direct to Maple Towers site — confirm site receipt & tie to Maple Towers CSC scope"},
     {"id": "SHP-068", "mfg": "RENO Lighting", "so": "", "po": "", "ship": "2026-08-06", "carrier": "CCT Canada", "tracking": "42237565", "exp": "2026-08-06", "status": "Delivered", "desc": "GIT (Simon) receipt Aug 6 — CCT delivered a pallet from Reno. Carrier tracking 42237565; RENO internal PO 95542 on the paperwork (not an LTS QuickBooks PO). New warehouse arrival; LTS PO/job not identified on receipt.", "job": "Unspecified (Reno via CCT)", "flag": "NEW this run: RENO pallet received Aug 6 (CCT #42237565 / RENO PO 95542) — tag at warehouse to identify LTS job/PO; may cover CF-250HOWE/PO 5420 (overdue, SHP-043)"},
+    {"id": "SHP-069", "mfg": "RENO Lighting", "so": "S097428", "po": "5454", "ship": "", "carrier": "", "tracking": "MISSING", "exp": "", "status": "Order Placed", "desc": "OM CASTLE PK EXTRAS — LTS PO 5454 issued to RENO Aug 7 (OM Castle Parkade extras). RENO (Yassine) returned order confirmation SO S097428 same day. Awaiting ship notice/ETA.", "job": "OM Castle Parkade (Extras)", "flag": "NEW this run: RENO order confirmed Aug 7 (SO S097428 / PO 5454) — request ship date + carrier tracking #"},
+    {"id": "SHP-070", "mfg": "Gescan (Sonepar)", "so": "", "po": "", "ship": "", "carrier": "Local pickup (Coquitlam)", "tracking": "", "exp": "", "status": "Order Placed", "desc": "WOODLANDS EXTRA ARLINGTON — LTS PO issued to Gescan (a Sonepar company) Aug 7; Asif Karim returned order confirmation same day, 'Pick up after 11AM.' Ready for collection at Gescan (266 Schoolhouse St, Coquitlam).", "job": "Woodlands (Extra Arlington)", "flag": "Gescan not on approved mfg list — ready for pickup Aug 7; arrange collection"},
 ]
 
 # Compute category
@@ -392,7 +394,7 @@ render();
 '''
 
 # Fill in placeholders
-HTML = HTML.replace("__LAST_UPDATED__", "Aug 7, 2026")
+HTML = HTML.replace("__LAST_UPDATED__", "Aug 9, 2026")
 HTML = HTML.replace("__TOTAL__", str(total))
 HTML = HTML.replace("__ACTIVE__", str(active))
 HTML = HTML.replace("__DELIVERED__", str(delivered))
